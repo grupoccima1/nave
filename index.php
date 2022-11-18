@@ -21,12 +21,11 @@ require_once "./clases/Conexion.php";
                         <th>Semana</th>
                         <th>Fecha</th>
                         <th>Beneficiario</th>
-                        <th>Ingreso</th>
-                        <th>Egreso</th>
+
                         <th>Motivo</th>
                         <th>Obra</th>
                         <th>Categoria</th>
-                        <th>Nave</th>          
+       
                     </thead>
                     <tbody>
 
@@ -37,12 +36,11 @@ require_once "./clases/Conexion.php";
                           <td class="text-center"> <?php echo $item->SEMANA; ?> </td>
                           <td class="text-center"> <?php echo $item->FECHA;?> </td>
                           <td class="text-center"> <?php echo $item->BENEFICIARIO;?> </td>
-                          <td class="text-center"> <?php echo $item->INGRESO;?> </td>
-                          <td class="text-center"><?php echo $item->EGRESO;?></td>
+
                           <td class="text-center"><?php echo $item->MOTIVO;?></td>
                           <td class="text-center"><?php echo $item->OBRA;?></td>
                           <td class="text-center"><?php echo $item->CATEGORIA;?></td>
-                          <td class="text-center"><?php echo $item->NAVE;?></td>
+
                         </tr>
 
                            <?php } ?> 
@@ -56,10 +54,10 @@ require_once "./clases/Conexion.php";
 </div>
 
 <script>
-
   var table = document.querySelector("#tabla");
 
-  var dataTale = new DataTable(table);
+var dataTale = new DataTable(table);
+
 </script>
 
 <?php include "./script.php"; ?>
