@@ -14,14 +14,34 @@
                 <h2>Nuevo Registro</h2>
 
                 <form action="./procesos/insertar.php" method="post">
-                    <label for="apaterno">A paterno</label>
-                    <input type="text" name="apaterno" id="apaterno" class="form-control">
-                    <label for="amaterno">A materno</label>
-                    <input type="text" name="amaterno" id="amaterno" class="form-control">
-                    <label for="nombre">Nombre</label>
-                    <input type="text" name="nombre" id="nombre" class="form-control">
-                    <label for="fechan">Fecha de nacimiento</label>
-                    <input type="date" name="fechan" id="fechan" class="form-control">
+                    <label for="apaterno">Semana </label>
+                    <input type="text" name="semana" id="semana" class="form-control">
+                    <label for="fechan">Fecha</label>
+                    <input type="date" name="fecha" id="fecha" class="form-control">
+                    <label for="amaterno">Beneficiario</label>
+                    <input type="text" name="beneficiario" id="beneficiario" class="form-control">
+                    <label for="nombre">Ingreso</label>
+                    <input type="text" name="ingreso" id="ingreso" class="form-control">
+                    <label for="nombre">Egreso</label>
+                    <input type="text" name="egreso" id="egreso" class="form-control">
+                    <label for="nombre">Motivo</label>
+                    <input type="text" name="motivo" id="motivo" class="form-control">
+                    <label for="nombre">Obra</label>
+                    <input type="text" name="obra" id="obra" class="form-control">
+                    <label for="nombre">Categoria</label>
+                    <input type="text" name="categoria" id="categoria" class="form-control">
+                    <label for="nombre">Subcategoria</label>
+                    <input type="text" name="subcat" id="subcat" class="form-control">
+                    <label for="nombre">Modelo de negocios</label>
+                    <input type="text" name="modelon" id="modelon" class="form-control">
+                    <label for="nombre">Ingreso / Egreso</label>
+                    <input type="text" name="ineg" id="ineg" class="form-control">
+                    <label for="nombre">Forma de pago</label>
+                    <input type="text" name="fpago" id="fpago" class="form-control">
+                    <label for="nombre">Mes 1</label>
+                    <input type="date" name="mes1" id="mes1" class="form-control">
+                    <label for="nombre">Nave</label>
+                    <input type="text" name="nave" id="nave" class="form-control">
                     <button class="btn btn-primary mt-3">
                         Agregar
                     </button>
