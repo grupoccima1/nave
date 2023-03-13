@@ -12,7 +12,7 @@ require_once "./clases/Conexion.php";
 <div class="card mt-4">
   <div class="card-body">
             <div class="col">
-                <h2>Historico</h2>
+                <h2>Cobranza</h2>
                 <a href="./agregar.php" class="btn btn-primary">
                 Agregar registro 
                 </a>
@@ -55,7 +55,7 @@ require_once "./clases/Conexion.php";
                           <td class="text-center"> <?php echo $item->MES1;?> </td>
                           <td class="text-center"> <?php echo $item->NAVE;?> </td>
                         </tr>
-                           <?php } ?> 
+                          <?php } ?> 
 
                     </tbody>
                 </table>

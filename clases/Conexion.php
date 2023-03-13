@@ -9,7 +9,7 @@
                 $servidor = "127.0.0.1";
                 $usuario ="mongoadmin";
                 $password = "123456";
-                $baseDatos = "navetec";
+                $baseDatos = "naves";
                 $puerto = "27017";
     
                 $cadenaConexion = "mongodb://" . 
