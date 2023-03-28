@@ -1,0 +1,94 @@
+<?php include "./header.php"; ?>
+<?php
+     require_once "../../clases/Conexion.php";
+     require_once "./crud.php";
+     $crud = new Crud();
+    $datos = $crud->mostrarDatos();
+?>
+
+
+<div class="container">
+<div class="row">
+<div class="card mt-4">
+  <div class="card-body">
+            <div class="col">
+                <h2>Base de Datos</h2>
+                <a href="../../agregar.php" class="btn btn-primary">
+                Agregar registro 
+                </a>
+                <hr>
+                <table class="table table-sm table-hover table-bordered" id="tabla">
+                    <thead>
+                        <th>No.</th>
+                        <th>Conjunto</th>
+                        <th>No. Oficial</th>
+                        <th>Etapa</th>
+                        <th>Tipo</th>
+                        <th>M2</th>
+                        <th>Disponibilidad</th>
+                        <th>Persona Moral</th>
+                        <th>Nombre</th>
+                        <th>Telefono</th>
+                        <th>Correo</th>
+                        <th>Mono Operación</th>
+                        <th>Iva Operación</th>
+                        <th>Total</th>
+                        <th>Enganche</th>
+                        <th>Financiamiento</th>
+                        <th>Cobrado</th>
+                        <th>Deuda Capital</th>
+                        <th>Morosidad</th>
+                        <th>Fecha Firma</th>
+                        <th>Fecha Entrega</th>
+                        <th>Fecha Prorroga</th>
+                        <th>Comp. Fiscal</th>
+                    </thead>
+                    <tbody>
+
+                        <?php
+                          foreach($datos as $item) {
+                        ?>
+                        <tr>
+                          <td class="text-center"> <?php echo $item->No; ?> </td>
+                          <td class="text-center"> <?php echo $item->CONJUNTO;?> </td>
+                          <td class="text-center"> <?php echo $item->NOFICIAL;?> </td>
+                          <td class="text-center"> <?php echo $item->NUMERO; ?> </td>
+                          <td class="text-center"> <?php echo $item->ETAPA;?> </td>
+                          <td class="text-center"> <?php echo $item->TIPO;?> </td>
+                          <td class="text-center"> <?php echo $item->M2;?></td>
+                          <td class="text-center"> <?php echo $item->DISPONIBILIDAD;?></td>
+                          <td class="text-center"> <?php echo $item->PERSONAMORAL;?></td>
+                          <td class="text-center"> <?php echo $item->NOMBRE; ?> </td>
+                          <td class="text-center"> <?php echo $item->TELEFONO;?> </td>
+                          <td class="text-center"> <?php echo $item->CORREO;?> </td>
+                          <td class="text-center"> <?php echo $item->MONOOPERACIÓN;?> </td>
+                          <td class="text-center"> <?php echo $item->IVAOPERACIÓN;?> </td>
+                          <td class="text-center"> <?php echo $item->TOTAL;?> </td>
+                          <td class="text-center"> <?php echo $item->ENGANCHE;?> </td>
+                          <td class="text-center"> <?php echo $item->FINANCIAMIENTO;?> </td>
+                          <td class="text-center"> <?php echo $item->COBRADO;?> </td>
+                          <td class="text-center"> <?php echo $item->DEUDACAPITAL;?> </td>
+                          <td class="text-center"> <?php echo $item->MOROSIDAD;?> </td>
+                          <td class="text-center"> <?php echo $item->FECHAFIRMA;?> </td>
+                          <td class="text-center"> <?php echo $item->FECHAENTREGA;?> </td>
+                          <td class="text-center"> <?php echo $item->FECHAPRORROGA;?> </td>
+                          <td class="text-center"> <?php echo $item->COMPFISCAL;?> </td>
+                        </tr>
+                          <?php } ?> 
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  var table = document.querySelector("#tabla");
+
+  var dataTale = new DataTable(table);
+
+</script>
+
+<?php include "../../script.php"; ?>
