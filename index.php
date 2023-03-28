@@ -16,6 +16,11 @@ require_once "./clases/Conexion.php";
                 <a href="./agregar.php" class="btn btn-primary">
                 Agregar registro 
                 </a>
+                <a href="http://localhost/nave-main/view/Atraso_Proyeccion/" class="btn btn-primary">Atrasos</a>
+                <a href="http://localhost/nave-main/view/Cobranza_Proyeccion/" class="btn btn-primary">Cobranza Proyeccion</a>
+                <a href="http://localhost/nave-main/view/Cobranza/" class="btn btn-primary">Cobranza</a>
+                <a href="http://localhost/nave-main/view/Base/" class="btn btn-primary">Base</a>
+                <a href="http://localhost/nave-main/view/General/" class="btn btn-primary">General</a>
                 <hr>
                 <table class="table table-sm table-hover table-bordered" id="tabla">
                     <thead>
