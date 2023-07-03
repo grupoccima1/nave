@@ -27,13 +27,15 @@
                         <th>Iva</th>
                         <th>Total</th>
                         <th>Int. Financiamiento</th>
-                        <th>Cobrado</th>
-                        <th>Deuda</th>
+                        <!-- <th>Cobrado</th>
+                        <th>Deuda</th> -->
                         <th>Proyeccion</th>
-                        <th>Morosidad</th>
-                        <th>Estatus</th>
+                        <!-- <th>Morosidad</th>
+                        <th>Estatus</th> -->
                         <th>Comentarios</th>
                         <th>Columna1</th>
+                        <th>Eliminar</th>
+                        <th>Modificar</th>
                     </thead>
                     <tbody>
 
@@ -41,21 +43,36 @@
                           foreach($datos as $item) {
                         ?>
                         <tr>
-                          <td class="text-center"> <?php echo $item->No; ?> </td>
+                        <td class="text-center"> <?php echo $item->No; ?> </td>
                           <td class="text-center"> <?php echo $item->CONJUNTO;?> </td>
                           <td class="text-center"> <?php echo $item->NUMERO;?> </td>
                           <td class="text-center"> <?php echo $item->TIPO; ?> </td>
-                          <td class="text-center"> <?php echo $item->SUBTOTAL;?> </td>
-                          <td class="text-center"> <?php echo $item->IVA;?> </td>
-                          <td class="text-center"> <?php echo $item->TOTAL;?></td>
-                          <td class="text-center"> <?php echo $item->INTFINANCIAMIENTO;?></td>
-                          <td class="text-center"> <?php echo $item->COBRADO;?></td>
-                          <td class="text-center"> <?php echo $item->DEUDA; ?> </td>
-                          <td class="text-center"> <?php echo $item->PROYECCION;?> </td>
-                          <td class="text-center"> <?php echo $item->MOROSIDAD;?> </td>
-                          <td class="text-center"> <?php echo $item->ESTATUS;?> </td>
+                          <td class="text-center"> <?php echo "$".number_format($item->SUB_TOTAL,2);?> </td>
+                          <td class="text-center"> <?php echo "$".number_format($item->IVA,2);?> </td>
+                          <td class="text-center"> <?php echo "$".number_format($item->TOTAL,2);?></td>
+                          <td class="text-center"> <?php echo "$".number_format($item->INT_FINANCIAMIENTO,2);?></td>
+                          <!-- <td class="text-center"> <?php echo $item->COBRADO;?></td> -->
+                          <!-- <td class="text-center"> <?php echo $item->DEUDA; ?> </td> -->
+                          <td class="text-center"> <?php echo "$".number_format($item->PROYECCION,2);?> </td>
+                          <!-- <td class="text-center"> <?php echo $item->MOROSIDAD;?> </td>
+                          <td class="text-center"> <?php echo $item->ESTATUS;?> </td> -->
                           <td class="text-center"> <?php echo $item->COMENTARIOS;?> </td>
                           <td class="text-center"> <?php echo $item->Columna1;?> </td>
+                          <td class="text-center"> 
+                            <form action="./../../actualizar.php" method="post">
+                              <button class="btn btn-warning">
+                                <i class="fa-solid fa-user-pen"></i>
+                              </button>
+                            </form>
+                          </td>
+                          <td class="text-center">
+                          <form action="./../../eliminar.php" method="post">
+                            <input type="text" name="id" id="id"  value="<?php echo $item->_id?> " hidden>
+                              <button class="btn btn-danger">
+                                <i class="fa-solid fa-user-xmark"></i>
+                              </button>
+                            </form> 
+                          </td>
                         </tr>
                           <?php } ?> 
 
