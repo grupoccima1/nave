@@ -12,58 +12,22 @@ require_once "./clases/Conexion.php";
 <div class="card mt-4">
   <div class="card-body">
             <div class="col">
-                <h2>Cobranza</h2>
-                <a href="./agregar.php" class="btn btn-primary">
-                Agregar registro 
+                <h2>Menu Inicial</h2>
+                <a href="./view/Atraso_Proyeccion/" class="btn btn-primary">
+                Atrasos 
                 </a>
-                <a href="http://localhost/nave-main/view/Atraso_Proyeccion/" class="btn btn-primary">Atrasos</a>
-                <a href="http://localhost/nave-main/view/Cobranza_Proyeccion/" class="btn btn-primary">Cobranza Proyeccion</a>
-                <a href="http://localhost/nave-main/view/Cobranza/" class="btn btn-primary">Cobranza</a>
-                <a href="http://localhost/nave-main/view/Base/" class="btn btn-primary">Base</a>
-                <a href="http://localhost/nave-main/view/General/" class="btn btn-primary">General</a>
-                <hr>
-                <table class="table table-sm table-hover table-bordered" id="tabla">
-                    <thead>
-                        <th>Semana</th>
-                        <th>Fecha</th>
-                        <th>Beneficiario</th>
-                        <th>Ingreso</th>
-                        <th>Egreso</th>
-                        <th>Motivo</th>
-                        <th>Obra</th>
-                        <th>Categoria</th>
-                        <th>Subcategoria</th>
-                        <th>Modelo de negocio</th>
-                        <th>Ingreso Egreso</th>
-                        <th>Forma dePago</th>
-                        <th>Mes 1</th>
-                        <th>Nave</th>
-                    </thead>
-                    <tbody>
-
-                        <?php
-                          foreach($datos as $item) {
-                        ?>
-                        <tr>
-                          <td class="text-center"> <?php echo $item->SEMANA; ?> </td>
-                          <td class="text-center"> <?php echo $item->FECHA;?> </td>
-                          <td class="text-center"> <?php echo $item->BENEFICIARIO;?> </td>
-                          <td class="text-center"> <?php echo $item->INGRESO; ?> </td>
-                          <td class="text-center"> <?php echo $item->EGRESO;?> </td>
-                          <td class="text-center"> <?php echo $item->MOTIVO;?> </td>
-                          <td class="text-center"> <?php echo $item->OBRA;?></td>
-                          <td class="text-center"> <?php echo $item->CATEGORIA;?></td>
-                          <td class="text-center"> <?php echo $item->SUBCATEGORIA;?></td>
-                          <td class="text-center"> <?php echo $item->MODNEGOCIO; ?> </td>
-                          <td class="text-center"> <?php echo $item->INGRESOEGRESO;?> </td>
-                          <td class="text-center"> <?php echo $item->FORMADEPAGO;?> </td>
-                          <td class="text-center"> <?php echo $item->MES1;?> </td>
-                          <td class="text-center"> <?php echo $item->NAVE;?> </td>
-                        </tr>
-                          <?php } ?> 
-
-                    </tbody>
-                </table>
+                <a href="./cobranza.php" class="btn btn-primary">
+                Cobranza 
+                </a>
+                <a href="./cobranza1.php" class="btn btn-primary">
+                Cobranza1 
+                </a>
+                <a href="./naves.php" class="btn btn-primary">
+                Naves 
+                </a>
+                <a href="./general.php" class="btn btn-primary">
+                General 
+                </a>
             </div>
         </div>
     </div>

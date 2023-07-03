@@ -1,4 +1,14 @@
-<?php include "./header.php"; ?>
+<?php 
+    include "./header.php";
+    include "./clases/Conexion.php";
+    include "./clases/crud.php"; 
+
+    $crud = new Crud();
+    $id = $_POST['id'];
+
+    $datos = $crud->obtenerDocumento($id);
+    echo $datos->No;
+?>
 
 
 <div class="container">
@@ -7,7 +17,7 @@
   <div class="card-body">
             <div class="col">
 
-                <a href="index.php" class="btn btn-outline-info">
+                <a href="./view/Atraso_Proyeccion/" class="btn btn-outline-info">
                     Regresar
                 </a>
 
@@ -15,13 +25,37 @@
                 
                 <table class="table table-bordered">
                     <thead>
-                        <th>Apellido paterno</th>
-                        <th>Apellido materno</th>
-                        <th>Nombre</th>
-                        <th>Fecha de nacimiento</th>
+                    <th>No.</th>
+                        <th>Conjunto</th>
+                        <th>Numero</th>
+                        <th>Tipo</th>
+                        <th>Sub Total</th>
+                        <th>Iva</th>
+                        <th>Total</th>
+                        <th>Int. Financiamiento</th>
+                        <!-- <th>Cobrado</th>
+                        <th>Deuda</th> -->
+                        <th>Proyeccion</th>
+                        <!-- <th>Morosidad</th>
+                        <th>Estatus</th> -->
+                        <th>Comentarios</th>
+                        <th>Columna1</th>
+
                     </thead>
                     <tbody>
                         <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                             <td></td>
                             <td></td>
                             <td></td>
