@@ -1,0 +1,1387 @@
+[{
+  "_id": {
+    "$oid": "6414c1e31fef942482b984ca"
+  },
+  "No": 7,
+  "CONJUNTO": "BETA",
+  "NUMERO": "38",
+  "TIPO": "NAVE",
+  "SUB TOTAL": 3141678.28,
+  "IVA": 402134.81984,
+  "TOTAL": 3543813.09984,
+  "COBRADO": 3542813.1,
+  "DEUDA": 999.999839999713,
+  "PROYECCION": 3543813.1,
+  "MOROSIDAD": -1000,
+  "ESTATUS": "MOROSO",
+  "ESTATUS DEPARTAMENTAL": "null",
+  "ComentariosP": "null"
+},
+{
+  "_id": {
+    "$oid": "6414c1e31fef942482b984cb"
+  },
+  "No": 8,
+  "CONJUNTO": "BETA",
+  "NUMERO": "39",
+  "TIPO": "NAVE",
+  "SUB TOTAL": 3172491.13475177,
+  "IVA": 406078.865248227,
+  "TOTAL": 3578570,
+  "COBRADO": 2490828.99,
+  "DEUDA": 1087741.01,
+  "PROYECCION": 3578570,
+  "MOROSIDAD": -1087741.01,
+  "ESTATUS": "MOROSO",
+  "ESTATUS DEPARTAMENTAL": "null",
+  "ComentariosP": "null"
+},
+{
+  "_id": {
+    "$oid": "6414c1e31fef942482b984cc"
+  },
+  "No": 11,
+  "CONJUNTO": "BETA",
+  "NUMERO": "42",
+  "TIPO": "NAVE",
+  "SUB TOTAL": 3172491.13475177,
+  "IVA": 406078.865248227,
+  "TOTAL": 3578570,
+  "COBRADO": 3172500,
+  "DEUDA": 406070,
+  "PROYECCION": 3578580,
+  "MOROSIDAD": -406080,
+  "ESTATUS": "MOROSO",
+  "ESTATUS DEPARTAMENTAL": "null",
+  "ComentariosP": "null"
+},
+{
+  "_id": {
+    "$oid": "6414c1e31fef942482b984cd"
+  },
+  "No": 12,
+  "CONJUNTO": "BETA",
+  "NUMERO": "43",
+  "TIPO": "NAVE",
+  "SUB TOTAL": 4490000,
+  "IVA": 574720,
+  "TOTAL": 5064720,
+  "COBRADO": 4305012,
+  "DEUDA": 759708,
+  "PROYECCION": 5064720,
+  "MOROSIDAD": -759708,
+  "ESTATUS": "MOROSO",
+  "ESTATUS DEPARTAMENTAL": "null",
+  "ComentariosP": "null"
+},
+{
+  "_id": {
+    "$oid": "6414c1e31fef942482b984ce"
+  },
+  "No": 13,
+  "CONJUNTO": "BETA",
+  "NUMERO": "44",
+  "TIPO": "NAVE",
+  "SUB TOTAL": 4490000,
+  "IVA": 574720,
+  "TOTAL": 5064720,
+  "COBRADO": 4305012,
+  "DEUDA": 759708,
+  "PROYECCION": 5064720,
+  "MOROSIDAD": -759708,
+  "ESTATUS": "MOROSO",
+  "ESTATUS DEPARTAMENTAL": "null",
+  "ComentariosP": "null"
+},
+{
+  "_id": {
+    "$oid": "6414c1e31fef942482b984cf"
+  },
+  "No": 17,
+  "CONJUNTO": "BETA",
+  "NUMERO": "48",
+  "TIPO": "NAVE",
+  "SUB TOTAL": 3348750,
+  "IVA": 428640,
+  "TOTAL": 3777390,
+  "COBRADO": 3348750,
+  "DEUDA": 428640,
+  "PROYECCION": 3777390,
+  "MOROSIDAD": -428640,
+  "ESTATUS": "MOROSO",
+  "ESTATUS DEPARTAMENTAL": "null",
+  "ComentariosP": "null"
+},
+{
+  "_id": {
+    "$oid": "6414c1e31fef942482b984d0"
+  },
+  "No": 18,
+  "CONJUNTO": "BETA",
+  "NUMERO": "49",
+  "TIPO": "NAVE",
+  "SUB TOTAL": 3850000,
+  "IVA": 492800,
+  "TOTAL": 4342800,
+  "COBRADO": 4125660,
+  "DEUDA": 217140,
+  "PROYECCION": 4342800,
+  "MOROSIDAD": -217140,
+  "ESTATUS": "MOROSO",
+  "ESTATUS DEPARTAMENTAL": "null",
+  "ComentariosP": "null"
+},
+{
+  "_id": {
+    "$oid": "6414c1e31fef942482b984d1"
+  },
+  "No": 19,
+  "CONJUNTO": "BETA",
+  "NUMERO": "50",
+  "TIPO": "NAVE",
+  "SUB TOTAL": 3850000,
+  "IVA": 492800,
+  "TOTAL": 4342800,
+  "COBRADO": 4125660,
+  "DEUDA": 217140,
+  "PROYECCION": 4342800,
+  "MOROSIDAD": -217140,
+  "ESTATUS": "MOROSO",
+  "ESTATUS DEPARTAMENTAL": "null",
+  "ComentariosP": "null"
+},
+{
+  "_id": {
+    "$oid": "6414c1e31fef942482b984d2"
+  },
+  "No": 26,
+  "CONJUNTO": "BETA",
+  "NUMERO": "57",
+  "TIPO": "NAVE",
+  "SUB TOTAL": 3250000,
+  "IVA": 416000,
+  "TOTAL": 3666000,
+  "COBRADO": 3189000,
+  "DEUDA": 477000,
+  "PROYECCION": 3666000,
+  "MOROSIDAD": -477000,
+  "ESTATUS": "MOROSO",
+  "ESTATUS DEPARTAMENTAL": "null",
+  "ComentariosP": "null"
+},
+{
+  "_id": {
+    "$oid": "6414c1e31fef942482b984d3"
+  },
+  "No": 30,
+  "CONJUNTO": "BETA",
+  "NUMERO": "61",
+  "TIPO": "NAVE",
+  "SUB TOTAL": 4476950,
+  "IVA": 573049.6,
+  "TOTAL": 5049999.6,
+  "COBRADO": 2500000,
+  "DEUDA": 2549999.6,
+  "PROYECCION": 3407497.68,
+  "MOROSIDAD": -907497.68,
+  "ESTATUS": "MOROSO",
+  "ESTATUS DEPARTAMENTAL": "null",
+  "ComentariosP": "null"
+},
+{
+  "_id": {
+    "$oid": "6414c1e31fef942482b984d4"
+  },
+  "No": 39,
+  "CONJUNTO": "BETA",
+  "NUMERO": "L5",
+  "TIPO": "LOCAL",
+  "SUB TOTAL": 493617,
+  "IVA": 63182.976,
+  "TOTAL": 556799.976,
+  "COBRADO": 562042,
+  "DEUDA": -0.00399999997534906,
+  "PROYECCION": 586836,
+  "MOROSIDAD": -24794,
+  "ESTATUS": "MOROSO",
+  "ESTATUS DEPARTAMENTAL": "null",
+  "ComentariosP": "null"
+},
+{
+  "_id": {
+    "$oid": "6414c1e31fef942482b984d5"
+  },
+  "No": 71,
+  "CONJUNTO": "GAMMA",
+  "NUMERO": "7B",
+  "TIPO": "NAVE",
+  "SUB TOTAL": 4334220,
+  "IVA": 554780.16,
+  "TOTAL": 4889000.16,
+  "COBRADO": 4889000.16,
+  "DEUDA": 0,
+  "PROYECCION": 5128561.17,
+  "MOROSIDAD": -239561.01,
+  "ESTATUS": "MOROSO",
+  "ESTATUS DEPARTAMENTAL": "null",
+  "ComentariosP": "null"
+},
+{
+  "_id": {
+    "$oid": "6414c1e31fef942482b984d6"
+  },
+  "No": 118,
+  "CONJUNTO": "GAMMA II",
+  "NUMERO": "4G",
+  "TIPO": "NAVE",
+  "SUB TOTAL": 4381068.62,
+  "IVA": 560776.78336,
+  "TOTAL": 4941845.40336,
+  "COBRADO": 2379445.357,
+  "DEUDA": 2562400.04636,
+  "PROYECCION": 2482097.02,
+  "MOROSIDAD": -102651.663000001,
+  "ESTATUS": "MOROSO",
+  "ESTATUS DEPARTAMENTAL": "null",
+  "ComentariosP": "revisar si hay acuerdo de no cobro de interes de financiamiento"
+},
+{
+  "_id": {
+    "$oid": "6414c1e31fef942482b984d7"
+  },
+  "No": 119,
+  "CONJUNTO": "GAMMA II",
+  "NUMERO": "5G",
+  "TIPO": "NAVE",
+  "SUB TOTAL": 4381068.62,
+  "IVA": 560776.78336,
+  "TOTAL": 4941845.40336,
+  "COBRADO": 2266089.041,
+  "DEUDA": 2675756.36236,
+  "PROYECCION": 2457858.3,
+  "MOROSIDAD": -191769.259,
+  "ESTATUS": "MOROSO",
+  "ESTATUS DEPARTAMENTAL": "COBRANZA",
+  "ComentariosP": "null"
+},
+{
+  "_id": {
+    "$oid": "6414c1e31fef942482b984d8"
+  },
+  "No": 120,
+  "CONJUNTO": "GAMMA II",
+  "NUMERO": "6G",
+  "TIPO": "NAVE",
+  "SUB TOTAL": 4516433.78,
+  "IVA": 578103.52384,
+  "TOTAL": 5094537.30384,
+  "COBRADO": 2642964.9,
+  "DEUDA": 2451572.40384,
+  "PROYECCION": 2835959.13,
+  "MOROSIDAD": -192994.23,
+  "ESTATUS": "MOROSO",
+  "ESTATUS DEPARTAMENTAL": "null",
+  "ComentariosP": "revisar acuerdo de meses con interes"
+},
+{
+  "_id": {
+    "$oid": "6414c1e31fef942482b984d9"
+  },
+  "No": 123,
+  "CONJUNTO": "GAMMA II",
+  "NUMERO": "9G",
+  "TIPO": "NAVE",
+  "SUB TOTAL": 4381068.62,
+  "IVA": 560776.78336,
+  "TOTAL": 4941845.40336,
+  "COBRADO": 1851069.22,
+  "DEUDA": 3090776.18336,
+  "PROYECCION": 1892677.51,
+  "MOROSIDAD": -41608.29,
+  "ESTATUS": "MOROSO",
+  "ESTATUS DEPARTAMENTAL": "null",
+  "ComentariosP": "null"
+},
+{
+  "_id": {
+    "$oid": "6414c1e31fef942482b984da"
+  },
+  "No": 125,
+  "CONJUNTO": "GAMMA II",
+  "NUMERO": "11G",
+  "TIPO": "NAVE",
+  "SUB TOTAL": 4893698.82,
+  "IVA": 626393.44896,
+  "TOTAL": 5520092.26896,
+  "COBRADO": 1960134.78,
+  "DEUDA": 3559957.48896,
+  "PROYECCION": 2170491.01,
+  "MOROSIDAD": -210356.23,
+  "ESTATUS": "MOROSO",
+  "ESTATUS DEPARTAMENTAL": "null",
+  "ComentariosP": "null"
+},
+{
+  "_id": {
+    "$oid": "6414c1e31fef942482b984db"
+  },
+  "No": 126,
+  "CONJUNTO": "GAMMA II",
+  "NUMERO": "12G",
+  "TIPO": "NAVE",
+  "SUB TOTAL": 4516565.59,
+  "IVA": 578120.39552,
+  "TOTAL": 5094685.98552,
+  "COBRADO": 1944190.8,
+  "DEUDA": 3150495.18552,
+  "PROYECCION": 1974190.8,
+  "MOROSIDAD": -30000,
+  "ESTATUS": "MOROSO",
+  "ESTATUS DEPARTAMENTAL": "null",
+  "ComentariosP": "null"
+},
+{
+  "_id": {
+    "$oid": "6414c1e31fef942482b984dc"
+  },
+  "No": 127,
+  "CONJUNTO": "GAMMA II",
+  "NUMERO": "13G",
+  "TIPO": "NAVE",
+  "SUB TOTAL": 4516565.59,
+  "IVA": 578120.39552,
+  "TOTAL": 5094685.98552,
+  "COBRADO": 1944190.8,
+  "DEUDA": 3150495.18552,
+  "PROYECCION": 2738393.7,
+  "MOROSIDAD": -794202.9,
+  "ESTATUS": "MOROSO",
+  "ESTATUS DEPARTAMENTAL": "null",
+  "ComentariosP": "null"
+},
+{
+  "_id": {
+    "$oid": "6414c1e31fef942482b984dd"
+  },
+  "No": 128,
+  "CONJUNTO": "GAMMA II",
+  "NUMERO": "14G",
+  "TIPO": "NAVE",
+  "SUB TOTAL": 4968222.68,
+  "IVA": 635932.50304,
+  "TOTAL": 5604155.18304,
+  "COBRADO": 2052915.48,
+  "DEUDA": 3551239.70304,
+  "PROYECCION": 2073537.48,
+  "MOROSIDAD": -20622,
+  "ESTATUS": "MOROSO",
+  "ESTATUS DEPARTAMENTAL": "null",
+  "ComentariosP": "null"
+},
+{
+  "_id": {
+    "$oid": "6414c1e31fef942482b984de"
+  },
+  "No": 131,
+  "CONJUNTO": "GAMMA II",
+  "NUMERO": "17G",
+  "TIPO": "NAVE",
+  "SUB TOTAL": 4946261.51,
+  "IVA": 633121.47328,
+  "TOTAL": 5579382.98328,
+  "COBRADO": 1774633.33,
+  "DEUDA": 3804749.65328,
+  "PROYECCION": 1818363.58,
+  "MOROSIDAD": -43730.25,
+  "ESTATUS": "MOROSO",
+  "ESTATUS DEPARTAMENTAL": "null",
+  "ComentariosP": "null"
+},
+{
+  "_id": {
+    "$oid": "6414c1e31fef942482b984df"
+  },
+  "No": 136,
+  "CONJUNTO": "GAMMA II",
+  "NUMERO": "5H",
+  "TIPO": "NAVE",
+  "SUB TOTAL": 4420000,
+  "IVA": 565760,
+  "TOTAL": 4985760,
+  "COBRADO": 4122888.48,
+  "DEUDA": 862871.52,
+  "PROYECCION": 4619351.33,
+  "MOROSIDAD": -496462.85,
+  "ESTATUS": "MOROSO",
+  "ESTATUS DEPARTAMENTAL": "null",
+  "ComentariosP": "null"
+},
+{
+  "_id": {
+    "$oid": "6414c1e31fef942482b984e0"
+  },
+  "No": 139,
+  "CONJUNTO": "GAMMA II",
+  "NUMERO": "8H",
+  "TIPO": "NAVE",
+  "SUB TOTAL": 3803415,
+  "IVA": 486837.12,
+  "TOTAL": 4290252.12,
+  "COBRADO": 1606736.13,
+  "DEUDA": 2683515.99,
+  "PROYECCION": 1912737.39,
+  "MOROSIDAD": -306001.26,
+  "ESTATUS": "MOROSO",
+  "ESTATUS DEPARTAMENTAL": "null",
+  "ComentariosP": "null"
+},
+{
+  "_id": {
+    "$oid": "6414c1e31fef942482b984e1"
+  },
+  "No": 140,
+  "CONJUNTO": "GAMMA II",
+  "NUMERO": "9H",
+  "TIPO": "NAVE",
+  "SUB TOTAL": 3803415,
+  "IVA": 486837.12,
+  "TOTAL": 4290252.12,
+  "COBRADO": 1579660.49,
+  "DEUDA": 2710591.63,
+  "PROYECCION": 1912737.39,
+  "MOROSIDAD": -333076.9,
+  "ESTATUS": "MOROSO",
+  "ESTATUS DEPARTAMENTAL": "null",
+  "ComentariosP": "null"
+},
+{
+  "_id": {
+    "$oid": "6414c1e31fef942482b984e2"
+  },
+  "No": 141,
+  "CONJUNTO": "GAMMA II",
+  "NUMERO": "10H",
+  "TIPO": "NAVE",
+  "SUB TOTAL": 5412106.27,
+  "IVA": 692749.60256,
+  "TOTAL": 6104855.87256,
+  "COBRADO": 610485.59,
+  "DEUDA": 5494370.28256,
+  "PROYECCION": 1180272.15,
+  "MOROSIDAD": -569786.56,
+  "ESTATUS": "MOROSO",
+  "ESTATUS DEPARTAMENTAL": "null",
+  "ComentariosP": "null"
+},
+{
+  "_id": {
+    "$oid": "6414c1e31fef942482b984e3"
+  },
+  "No": 146,
+  "CONJUNTO": "GAMMA II",
+  "NUMERO": "15H",
+  "TIPO": "NAVE",
+  "SUB TOTAL": 3993585.75,
+  "IVA": 511178.976,
+  "TOTAL": 4504764.726,
+  "COBRADO": 1878353.48,
+  "DEUDA": 2626411.246,
+  "PROYECCION": 1982096.37,
+  "MOROSIDAD": -103742.89,
+  "ESTATUS": "MOROSO",
+  "ESTATUS DEPARTAMENTAL": "null",
+  "ComentariosP": "null"
+},
+{
+  "_id": {
+    "$oid": "6414c1e31fef942482b984e4"
+  },
+  "No": 149,
+  "CONJUNTO": "SANTA ROSA",
+  "NUMERO": "2A",
+  "TIPO": "NAVE",
+  "SUB TOTAL": 4533686.9,
+  "IVA": 580311.9232,
+  "TOTAL": 5113998.8232,
+  "COBRADO": 2500000,
+  "DEUDA": 2613998.8232,
+  "PROYECCION": 5113998.75,
+  "MOROSIDAD": -2613998.75,
+  "ESTATUS": "MOROSO",
+  "ESTATUS DEPARTAMENTAL": "null",
+  "ComentariosP": "null"
+},
+{
+  "_id": {
+    "$oid": "6414c1e31fef942482b984e5"
+  },
+  "No": 150,
+  "CONJUNTO": "SANTA ROSA",
+  "NUMERO": "3A",
+  "TIPO": "NAVE",
+  "SUB TOTAL": 4533686.9,
+  "IVA": 580311.9232,
+  "TOTAL": 5113998.8232,
+  "COBRADO": 2500000,
+  "DEUDA": 2613998.8232,
+  "PROYECCION": 5113998.75,
+  "MOROSIDAD": -2613998.75,
+  "ESTATUS": "MOROSO",
+  "ESTATUS DEPARTAMENTAL": "null",
+  "ComentariosP": "null"
+},
+{
+  "_id": {
+    "$oid": "6414c1e31fef942482b984e6"
+  },
+  "No": 151,
+  "CONJUNTO": "SANTA ROSA",
+  "NUMERO": "4A",
+  "TIPO": "NAVE",
+  "SUB TOTAL": 4533686.9,
+  "IVA": 580311.9232,
+  "TOTAL": 5113998.8232,
+  "COBRADO": 2500000,
+  "DEUDA": 2613998.8232,
+  "PROYECCION": 5113998.75,
+  "MOROSIDAD": -2613998.75,
+  "ESTATUS": "MOROSO",
+  "ESTATUS DEPARTAMENTAL": "null",
+  "ComentariosP": "null"
+},
+{
+  "_id": {
+    "$oid": "6414c1e31fef942482b984e7"
+  },
+  "No": 152,
+  "CONJUNTO": "SANTA ROSA",
+  "NUMERO": "5A",
+  "TIPO": "NAVE",
+  "SUB TOTAL": 4533686.9,
+  "IVA": 580311.9232,
+  "TOTAL": 5113998.8232,
+  "COBRADO": 2500000,
+  "DEUDA": 2613998.8232,
+  "PROYECCION": 5113998.75,
+  "MOROSIDAD": -2613998.75,
+  "ESTATUS": "MOROSO",
+  "ESTATUS DEPARTAMENTAL": "null",
+  "ComentariosP": "null"
+},
+{
+  "_id": {
+    "$oid": "6414c1e31fef942482b984e8"
+  },
+  "No": 156,
+  "CONJUNTO": "SANTA ROSA",
+  "NUMERO": "3B",
+  "TIPO": "NAVE",
+  "SUB TOTAL": 5357292.23,
+  "IVA": 685733.40544,
+  "TOTAL": 6043025.63544,
+  "COBRADO": 2000000,
+  "DEUDA": 4043025.63544,
+  "PROYECCION": 6043025.63,
+  "MOROSIDAD": -4043025.63,
+  "ESTATUS": "MOROSO",
+  "ESTATUS DEPARTAMENTAL": "null",
+  "ComentariosP": "null"
+},
+{
+  "_id": {
+    "$oid": "6414c1e31fef942482b984e9"
+  },
+  "No": 157,
+  "CONJUNTO": "SANTA ROSA",
+  "NUMERO": "4B",
+  "TIPO": "NAVE",
+  "SUB TOTAL": 4683649.42,
+  "IVA": 599507.12576,
+  "TOTAL": 5283156.54576,
+  "COBRADO": 4256525.23,
+  "DEUDA": 1026631.31576,
+  "PROYECCION": 5283156.53,
+  "MOROSIDAD": -1026631.3,
+  "ESTATUS": "MOROSO",
+  "ESTATUS DEPARTAMENTAL": "null",
+  "ComentariosP": "null"
+},
+{
+  "_id": {
+    "$oid": "6414c1e31fef942482b984ea"
+  },
+  "No": 158,
+  "CONJUNTO": "SANTA ROSA",
+  "NUMERO": "5B",
+  "TIPO": "NAVE",
+  "SUB TOTAL": 4683649.42,
+  "IVA": 599507.12576,
+  "TOTAL": 5283156.54576,
+  "COBRADO": 4256525.23,
+  "DEUDA": 1026631.31576,
+  "PROYECCION": 5283156.53,
+  "MOROSIDAD": -1026631.3,
+  "ESTATUS": "MOROSO",
+  "ESTATUS DEPARTAMENTAL": "null",
+  "ComentariosP": "null"
+},
+{
+  "_id": {
+    "$oid": "6414c1e31fef942482b984eb"
+  },
+  "No": 166,
+  "CONJUNTO": "SANTA ROSA",
+  "NUMERO": "2D",
+  "TIPO": "NAVE",
+  "SUB TOTAL": 4420000,
+  "IVA": 565760,
+  "TOTAL": 4985760,
+  "COBRADO": 4931185.3,
+  "DEUDA": 54574.7000000002,
+  "PROYECCION": 4985760.06,
+  "MOROSIDAD": -54574.7599999988,
+  "ESTATUS": "MOROSO",
+  "ESTATUS DEPARTAMENTAL": "null",
+  "ComentariosP": "null"
+},
+{
+  "_id": {
+    "$oid": "6414c1e31fef942482b984ec"
+  },
+  "No": 170,
+  "CONJUNTO": "SANTA ROSA",
+  "NUMERO": "6D",
+  "TIPO": "NAVE",
+  "SUB TOTAL": 4462102.5,
+  "IVA": 571149.12,
+  "TOTAL": 5033251.62,
+  "COBRADO": 4981944.0899,
+  "DEUDA": 51307.5301000001,
+  "PROYECCION": 5033251.64,
+  "MOROSIDAD": -51307.5500999996,
+  "ESTATUS": "MOROSO",
+  "ESTATUS DEPARTAMENTAL": "null",
+  "ComentariosP": "null"
+},
+{
+  "_id": {
+    "$oid": "6414c1e31fef942482b984ed"
+  },
+  "No": 186,
+  "CONJUNTO": "SANTA ROSA",
+  "NUMERO": "2G",
+  "TIPO": "NAVE",
+  "SUB TOTAL": 6153840,
+  "IVA": 787691.52,
+  "TOTAL": 6941531.52,
+  "COBRADO": 3540338.36,
+  "DEUDA": 3401193.16,
+  "PROYECCION": 6941531.52,
+  "MOROSIDAD": -3401193.16,
+  "ESTATUS": "MOROSO",
+  "ESTATUS DEPARTAMENTAL": "null",
+  "ComentariosP": "null"
+},
+{
+  "_id": {
+    "$oid": "6414c1e31fef942482b984ee"
+  },
+  "No": 188,
+  "CONJUNTO": "SANTA ROSA",
+  "NUMERO": "4G",
+  "TIPO": "NAVE",
+  "SUB TOTAL": 6258463.83,
+  "IVA": 801083.37024,
+  "TOTAL": 7059547.20024,
+  "COBRADO": 6020000,
+  "DEUDA": 1039547.20024,
+  "PROYECCION": 7059547.2,
+  "MOROSIDAD": -1039547.2,
+  "ESTATUS": "MOROSO",
+  "ESTATUS DEPARTAMENTAL": "null",
+  "ComentariosP": "null"
+},
+{
+  "_id": {
+    "$oid": "6414c1e31fef942482b984ef"
+  },
+  "No": 193,
+  "CONJUNTO": "SANTA ROSA",
+  "NUMERO": "9G",
+  "TIPO": "NAVE",
+  "SUB TOTAL": 8155730,
+  "IVA": 1043933.44,
+  "TOTAL": 9199663.44,
+  "COBRADO": 4599831.72,
+  "DEUDA": 4599831.72,
+  "PROYECCION": 9199663.44,
+  "MOROSIDAD": -4599831.72,
+  "ESTATUS": "MOROSO",
+  "ESTATUS DEPARTAMENTAL": "null",
+  "ComentariosP": "null"
+},
+{
+  "_id": {
+    "$oid": "6414c1e31fef942482b984f0"
+  },
+  "No": 200,
+  "CONJUNTO": "SANTA ROSA",
+  "NUMERO": "6H",
+  "TIPO": "NAVE",
+  "SUB TOTAL": 4551649,
+  "IVA": 582611.072,
+  "TOTAL": 5134260.072,
+  "COBRADO": 500000,
+  "DEUDA": 4634260.072,
+  "PROYECCION": 5134260,
+  "MOROSIDAD": -4634260,
+  "ESTATUS": "MOROSO",
+  "ESTATUS DEPARTAMENTAL": "null",
+  "ComentariosP": "null"
+},
+{
+  "_id": {
+    "$oid": "6414c1e31fef942482b984f1"
+  },
+  "No": 204,
+  "CONJUNTO": "SANTA ROSA",
+  "NUMERO": "3I",
+  "TIPO": "NAVE",
+  "SUB TOTAL": 7565545.75,
+  "IVA": 968389.856,
+  "TOTAL": 8533935.606,
+  "COBRADO": 8047464.46,
+  "DEUDA": 486471.146,
+  "PROYECCION": 8533935.61,
+  "MOROSIDAD": -486471.149999999,
+  "ESTATUS": "MOROSO",
+  "ESTATUS DEPARTAMENTAL": "null",
+  "ComentariosP": "null"
+},
+{
+  "_id": {
+    "$oid": "6414c1e31fef942482b984f2"
+  },
+  "No": 205,
+  "CONJUNTO": "SANTA ROSA",
+  "NUMERO": "4I",
+  "TIPO": "NAVE",
+  "SUB TOTAL": 9198352.5,
+  "IVA": 1177389.12,
+  "TOTAL": 10375741.62,
+  "COBRADO": 7816076.7,
+  "DEUDA": 2559664.92,
+  "PROYECCION": 8284669.74,
+  "MOROSIDAD": -468593.039999999,
+  "ESTATUS": "MOROSO",
+  "ESTATUS DEPARTAMENTAL": "null",
+  "ComentariosP": "null"
+},
+{
+  "_id": {
+    "$oid": "6414c1e31fef942482b984f3"
+  },
+  "No": 206,
+  "CONJUNTO": "SANTA ROSA",
+  "NUMERO": "5I",
+  "TIPO": "NAVE",
+  "SUB TOTAL": 9219435.6,
+  "IVA": 1180087.7568,
+  "TOTAL": 10399523.3568,
+  "COBRADO": 7854993.82,
+  "DEUDA": 2544529.5368,
+  "PROYECCION": 8303658.61,
+  "MOROSIDAD": -448664.79,
+  "ESTATUS": "MOROSO",
+  "ESTATUS DEPARTAMENTAL": "null",
+  "ComentariosP": "null"
+},
+{
+  "_id": {
+    "$oid": "6414c1e31fef942482b984f4"
+  },
+  "No": 233,
+  "CONJUNTO": "LA PRESA",
+  "NUMERO": "1C",
+  "TIPO": "null",
+  "SUB TOTAL": 1602519.59,
+  "IVA": 0,
+  "TOTAL": 1602519.59,
+  "COBRADO": 315651.23,
+  "DEUDA": 1286868.36,
+  "PROYECCION": 497755.363,
+  "MOROSIDAD": -182104.133,
+  "ESTATUS": "MOROSO",
+  "ESTATUS DEPARTAMENTAL": "CUSTOMER SERVICE",
+  "ComentariosP": "SE REVISA SI SE HACE REUBICACION O CANCELACION"
+},
+{
+  "_id": {
+    "$oid": "6414c1e31fef942482b984f5"
+  },
+  "No": 285,
+  "CONJUNTO": "AEROPUERTO",
+  "NUMERO": "1A",
+  "TIPO": "NAVE",
+  "SUB TOTAL": 1848902.67,
+  "IVA": 0,
+  "TOTAL": 1848902.67,
+  "COBRADO": 341345.6023,
+  "DEUDA": 1507557.0677,
+  "PROYECCION": 420205.144,
+  "MOROSIDAD": -78859.5416999998,
+  "ESTATUS": "MOROSO",
+  "ESTATUS DEPARTAMENTAL": "CUSTOMER SERVICE",
+  "ComentariosP": "POSIBLE LIBERACION"
+},
+{
+  "_id": {
+    "$oid": "6414c1e31fef942482b984f6"
+  },
+  "No": 286,
+  "CONJUNTO": "AEROPUERTO",
+  "NUMERO": "2A",
+  "TIPO": "NAVE",
+  "SUB TOTAL": 1977834.69,
+  "IVA": 0,
+  "TOTAL": 1977834.69,
+  "COBRADO": 391367.16,
+  "DEUDA": 1586467.53,
+  "PROYECCION": 435123.63,
+  "MOROSIDAD": -43756.4700000001,
+  "ESTATUS": "MOROSO",
+  "ESTATUS DEPARTAMENTAL": "CUSTOMER SERVICE",
+  "ComentariosP": "POSIBLE LIBERACION"
+},
+{
+  "_id": {
+    "$oid": "6414c1e31fef942482b984f7"
+  },
+  "No": 296,
+  "CONJUNTO": "AEROPUERTO",
+  "NUMERO": "1B",
+  "TIPO": "NAVE",
+  "SUB TOTAL": 5574896.18,
+  "IVA": 713586.71,
+  "TOTAL": 6288482.89,
+  "COBRADO": 430182.82,
+  "DEUDA": 5858300.07,
+  "PROYECCION": 775579.57,
+  "MOROSIDAD": -345396.75,
+  "ESTATUS": "MOROSO",
+  "ESTATUS DEPARTAMENTAL": "EXTRAJUDICIAL",
+  "ComentariosP": "se pondran al corriente primera semana enero 23"
+},
+{
+  "_id": {
+    "$oid": "6414c1e31fef942482b984f8"
+  },
+  "No": 298,
+  "CONJUNTO": "AEROPUERTO",
+  "NUMERO": "3B",
+  "TIPO": "NAVE",
+  "SUB TOTAL": 4646400.58,
+  "IVA": 594739.27,
+  "TOTAL": 5241139.85,
+  "COBRADO": 1528888.51,
+  "DEUDA": 3712251.34,
+  "PROYECCION": 1853945,
+  "MOROSIDAD": -325056.490000001,
+  "ESTATUS": "MOROSO",
+  "ESTATUS DEPARTAMENTAL": "CUSTOMER SERVICE",
+  "ComentariosP": "POSIBLE LIBERACION"
+},
+{
+  "_id": {
+    "$oid": "6414c1e31fef942482b984f9"
+  },
+  "No": 314,
+  "CONJUNTO": "AEROPUERTO",
+  "NUMERO": "9C",
+  "TIPO": "NAVE",
+  "SUB TOTAL": 1696556.4,
+  "IVA": 0,
+  "TOTAL": 1696556.4,
+  "COBRADO": 373242.66,
+  "DEUDA": 1323313.74,
+  "PROYECCION": 385966.581,
+  "MOROSIDAD": -12723.9210000003,
+  "ESTATUS": "MOROSO",
+  "ESTATUS DEPARTAMENTAL": "COBRANZA",
+  "ComentariosP": "null"
+},
+{
+  "_id": {
+    "$oid": "6414c1e31fef942482b984fa"
+  },
+  "No": 337,
+  "CONJUNTO": "AEROPUERTO",
+  "NUMERO": "12E",
+  "TIPO": "NAVE",
+  "SUB TOTAL": 2912489.9964539,
+  "IVA": 372798.719546099,
+  "TOTAL": 3285288.716,
+  "COBRADO": 405185.575,
+  "DEUDA": 2880103.141,
+  "PROYECCION": 963684.62,
+  "MOROSIDAD": -558499.045,
+  "ESTATUS": "MOROSO",
+  "ESTATUS DEPARTAMENTAL": "EXTRAJUDICIAL",
+  "ComentariosP": "LIBERAR"
+},
+{
+  "_id": {
+    "$oid": "6414c1e31fef942482b984fb"
+  },
+  "No": 338,
+  "CONJUNTO": "AEROPUERTO",
+  "NUMERO": "13E",
+  "TIPO": "NAVE",
+  "SUB TOTAL": 3203739,
+  "IVA": 410078.592,
+  "TOTAL": 3613817.592,
+  "COBRADO": 445704.175,
+  "DEUDA": 3168113.417,
+  "PROYECCION": 1060053.13,
+  "MOROSIDAD": -614348.955,
+  "ESTATUS": "MOROSO",
+  "ESTATUS DEPARTAMENTAL": "EXTRAJUDICIAL",
+  "ComentariosP": "LIBERAR"
+},
+{
+  "_id": {
+    "$oid": "6414c1e31fef942482b984fc"
+  },
+  "No": 342,
+  "CONJUNTO": "AEROPUERTO",
+  "NUMERO": "17E",
+  "TIPO": "LOTE",
+  "SUB TOTAL": 1118006.38,
+  "IVA": 0,
+  "TOTAL": 1118006.38,
+  "COBRADO": 367945.28,
+  "DEUDA": 750061.1,
+  "PROYECCION": 376019.06,
+  "MOROSIDAD": -8073.78000000003,
+  "ESTATUS": "MOROSO",
+  "ESTATUS DEPARTAMENTAL": "COBRANZA",
+  "ComentariosP": "null"
+},
+{
+  "_id": {
+    "$oid": "6414c1e31fef942482b984fd"
+  },
+  "No": 349,
+  "CONJUNTO": "PEDRO ESCOBEDO",
+  "NUMERO": "7A",
+  "TIPO": "NAVE",
+  "SUB TOTAL": 3244725.6,
+  "IVA": 415324.8768,
+  "TOTAL": 3660050.4768,
+  "COBRADO": 579507.95,
+  "DEUDA": 3080542.5268,
+  "PROYECCION": 674495.08,
+  "MOROSIDAD": -94987.1300000001,
+  "ESTATUS": "MOROSO",
+  "ESTATUS DEPARTAMENTAL": "COBRANZA",
+  "ComentariosP": "null"
+},
+{
+  "_id": {
+    "$oid": "6414c1e31fef942482b984fe"
+  },
+  "No": 353,
+  "CONJUNTO": "PEDRO ESCOBEDO",
+  "NUMERO": "11A",
+  "TIPO": "LOTE",
+  "SUB TOTAL": 1180260,
+  "IVA": 0,
+  "TOTAL": 1180260,
+  "COBRADO": 128026,
+  "DEUDA": 1052234,
+  "PROYECCION": 186874.5,
+  "MOROSIDAD": -58848.5000000001,
+  "ESTATUS": "MOROSO",
+  "ESTATUS DEPARTAMENTAL": "EXTRAJUDICIAL",
+  "ComentariosP": "LEGAL ESTA NEGOCIANDO"
+},
+{
+  "_id": {
+    "$oid": "6414c1e31fef942482b984ff"
+  },
+  "No": 354,
+  "CONJUNTO": "PEDRO ESCOBEDO",
+  "NUMERO": "12A",
+  "TIPO": "LOTE",
+  "SUB TOTAL": 1180260,
+  "IVA": 0,
+  "TOTAL": 1180260,
+  "COBRADO": 128026,
+  "DEUDA": 1052234,
+  "PROYECCION": 186874.5,
+  "MOROSIDAD": -58848.5000000001,
+  "ESTATUS": "MOROSO",
+  "ESTATUS DEPARTAMENTAL": "EXTRAJUDICIAL",
+  "ComentariosP": "LEGAL ESTA NEGOCIANDO"
+},
+{
+  "_id": {
+    "$oid": "6414c1e31fef942482b98500"
+  },
+  "No": 357,
+  "CONJUNTO": "PEDRO ESCOBEDO",
+  "NUMERO": "15A",
+  "TIPO": "LOTE",
+  "SUB TOTAL": 818235,
+  "IVA": 0,
+  "TOTAL": 818235,
+  "COBRADO": 255688.59,
+  "DEUDA": 562546.41,
+  "PROYECCION": 256091.721,
+  "MOROSIDAD": -403.131000000285,
+  "ESTATUS": "MOROSO",
+  "ESTATUS DEPARTAMENTAL": "COBRANZA",
+  "ComentariosP": "null"
+},
+{
+  "_id": {
+    "$oid": "6414c1e31fef942482b98501"
+  },
+  "No": 368,
+  "CONJUNTO": "PEDRO ESCOBEDO",
+  "NUMERO": "10B",
+  "TIPO": "NAVE",
+  "SUB TOTAL": 3634092.67,
+  "IVA": 465163.86,
+  "TOTAL": 4099256.53176,
+  "COBRADO": 649048.95,
+  "DEUDA": 3450207.58176,
+  "PROYECCION": 755524.47,
+  "MOROSIDAD": -106475.52,
+  "ESTATUS": "MOROSO",
+  "ESTATUS DEPARTAMENTAL": "COBRANZA",
+  "ComentariosP": "null"
+},
+{
+  "_id": {
+    "$oid": "6414c1e31fef942482b98502"
+  },
+  "No": 369,
+  "CONJUNTO": "PEDRO ESCOBEDO",
+  "NUMERO": "11B",
+  "TIPO": "LOTE",
+  "SUB TOTAL": 1388822.4,
+  "IVA": 0,
+  "TOTAL": 1388822.4,
+  "COBRADO": 132500,
+  "DEUDA": 1256322.4,
+  "PROYECCION": 236099.82,
+  "MOROSIDAD": -103599.82,
+  "ESTATUS": "MOROSO",
+  "ESTATUS DEPARTAMENTAL": "EXTRAJUDICIAL",
+  "ComentariosP": "LEGAL ESTA NEGOCIANDO"
+},
+{
+  "_id": {
+    "$oid": "6414c1e31fef942482b98503"
+  },
+  "No": 370,
+  "CONJUNTO": "PEDRO ESCOBEDO",
+  "NUMERO": "12B",
+  "TIPO": "LOTE",
+  "SUB TOTAL": 1388822.4,
+  "IVA": 0,
+  "TOTAL": 1388822.4,
+  "COBRADO": 145264.48,
+  "DEUDA": 1243557.92,
+  "PROYECCION": 236099.82,
+  "MOROSIDAD": -90835.34,
+  "ESTATUS": "MOROSO",
+  "ESTATUS DEPARTAMENTAL": "EXTRAJUDICIAL",
+  "ComentariosP": "LEGAL ESTA NEGOCIANDO"
+},
+{
+  "_id": {
+    "$oid": "6414c1e31fef942482b98504"
+  },
+  "No": 388,
+  "CONJUNTO": "PEDRO ESCOBEDO",
+  "NUMERO": "2D",
+  "TIPO": "NAVE",
+  "SUB TOTAL": 3586275,
+  "IVA": 459043.2,
+  "TOTAL": 4045318.2,
+  "COBRADO": 1388748.1,
+  "DEUDA": 2656570.1,
+  "PROYECCION": 1483283.35,
+  "MOROSIDAD": -94535.25,
+  "ESTATUS": "MOROSO",
+  "ESTATUS DEPARTAMENTAL": "COBRANZA",
+  "ComentariosP": "null"
+},
+{
+  "_id": {
+    "$oid": "6414c1e31fef942482b98505"
+  },
+  "No": 389,
+  "CONJUNTO": "PEDRO ESCOBEDO",
+  "NUMERO": "3D",
+  "TIPO": "NAVE",
+  "SUB TOTAL": 3586275,
+  "IVA": 459043.2,
+  "TOTAL": 4045318.2,
+  "COBRADO": 1388094.86,
+  "DEUDA": 2657223.34,
+  "PROYECCION": 1483283.35,
+  "MOROSIDAD": -95188.49,
+  "ESTATUS": "MOROSO",
+  "ESTATUS DEPARTAMENTAL": "COBRANZA",
+  "ComentariosP": "null"
+},
+{
+  "_id": {
+    "$oid": "6414c1e31fef942482b98506"
+  },
+  "No": 392,
+  "CONJUNTO": "PEDRO ESCOBEDO",
+  "NUMERO": "6D",
+  "TIPO": "NAVE",
+  "SUB TOTAL": 4399164,
+  "IVA": 563092.992,
+  "TOTAL": 4962256.992,
+  "COBRADO": 744333.55,
+  "DEUDA": 4217923.442,
+  "PROYECCION": 1372361.55,
+  "MOROSIDAD": -628028,
+  "ESTATUS": "MOROSO",
+  "ESTATUS DEPARTAMENTAL": "EXTRAJUDICIAL",
+  "ComentariosP": "TEMA CON LEGAL"
+},
+{
+  "_id": {
+    "$oid": "6414c1e31fef942482b98507"
+  },
+  "No": 399,
+  "CONJUNTO": "PEDRO ESCOBEDO",
+  "NUMERO": "1E",
+  "TIPO": "LOTE",
+  "SUB TOTAL": 1985943.96,
+  "IVA": 0,
+  "TOTAL": 1985943.96,
+  "COBRADO": 586350.170000001,
+  "DEUDA": 1399593.79,
+  "PROYECCION": 601801.200000001,
+  "MOROSIDAD": -15451.03,
+  "ESTATUS": "MOROSO",
+  "ESTATUS DEPARTAMENTAL": "COBRANZA",
+  "ComentariosP": "null"
+},
+{
+  "_id": {
+    "$oid": "6414c1e31fef942482b98508"
+  },
+  "No": 400,
+  "CONJUNTO": "PEDRO ESCOBEDO",
+  "NUMERO": "2E",
+  "TIPO": "LOTE",
+  "SUB TOTAL": 1234926,
+  "IVA": 0,
+  "TOTAL": 1234926,
+  "COBRADO": 364864.5,
+  "DEUDA": 870061.5,
+  "PROYECCION": 374220,
+  "MOROSIDAD": -9355.5,
+  "ESTATUS": "MOROSO",
+  "ESTATUS DEPARTAMENTAL": "COBRANZA",
+  "ComentariosP": "null"
+},
+{
+  "_id": {
+    "$oid": "6414c1e31fef942482b98509"
+  },
+  "No": 413,
+  "CONJUNTO": "PEDRO ESCOBEDO",
+  "NUMERO": "5F",
+  "TIPO": "NAVE",
+  "SUB TOTAL": 5391192.93,
+  "IVA": 690072.7,
+  "TOTAL": 6081265.63,
+  "COBRADO": 1044103.38,
+  "DEUDA": 5037162.25,
+  "PROYECCION": 1710938.17,
+  "MOROSIDAD": -666834.79,
+  "ESTATUS": "MOROSO",
+  "ESTATUS DEPARTAMENTAL": "COBRANZA",
+  "ComentariosP": "prorroga a enero 2023"
+},
+{
+  "_id": {
+    "$oid": "6414c1e31fef942482b9850a"
+  },
+  "No": 416,
+  "CONJUNTO": "PEDRO ESCOBEDO",
+  "NUMERO": "8F",
+  "TIPO": "NAVE",
+  "SUB TOTAL": 5445845.78,
+  "IVA": 697068.25984,
+  "TOTAL": 6142914.03984,
+  "COBRADO": 1680824.57,
+  "DEUDA": 4462089.46984,
+  "PROYECCION": 1685681.78,
+  "MOROSIDAD": -4857.20999999996,
+  "ESTATUS": "MOROSO",
+  "ESTATUS DEPARTAMENTAL": "COBRANZA",
+  "ComentariosP": "null"
+},
+{
+  "_id": {
+    "$oid": "6414c1e31fef942482b9850b"
+  },
+  "No": 425,
+  "CONJUNTO": "PEDRO ESCOBEDO",
+  "NUMERO": "7G",
+  "TIPO": "LOTE",
+  "SUB TOTAL": 2520000,
+  "IVA": 0,
+  "TOTAL": 2520000,
+  "COBRADO": 262000,
+  "DEUDA": 2258000,
+  "PROYECCION": 281400,
+  "MOROSIDAD": -19400,
+  "ESTATUS": "MOROSO",
+  "ESTATUS DEPARTAMENTAL": "COBRANZA",
+  "ComentariosP": "null"
+},
+{
+  "_id": {
+    "$oid": "6414c1e31fef942482b9850c"
+  },
+  "No": 538,
+  "CONJUNTO": "SAN LUIS POTOSI",
+  "NUMERO": "5I",
+  "TIPO": "NAVE",
+  "SUB TOTAL": 5259811.2,
+  "IVA": 673255.8336,
+  "TOTAL": 5933067.0336,
+  "COBRADO": 1804641.16,
+  "DEUDA": 4128425.8736,
+  "PROYECCION": 2484471.75,
+  "MOROSIDAD": -679830.590000001,
+  "ESTATUS": "MOROSO",
+  "ESTATUS DEPARTAMENTAL": "CUSTOMER SERVICE",
+  "ComentariosP": "se esta revisando si se hace reubicacion o cancelacion"
+},
+{
+  "_id": {
+    "$oid": "6414c1e31fef942482b9850d"
+  },
+  "No": 546,
+  "CONJUNTO": "CELTA",
+  "NUMERO": "2A",
+  "TIPO": "LOTE",
+  "SUB TOTAL": 2263808.2,
+  "IVA": 0,
+  "TOTAL": 2263808.2,
+  "COBRADO": 279203.02,
+  "DEUDA": 1984605.18,
+  "PROYECCION": 305614.12,
+  "MOROSIDAD": -26411.1,
+  "ESTATUS": "MOROSO",
+  "ESTATUS DEPARTAMENTAL": "COBRANZA",
+  "ComentariosP": "null"
+},
+{
+  "_id": {
+    "$oid": "6414c1e31fef942482b9850e"
+  },
+  "No": 549,
+  "CONJUNTO": "CELTA",
+  "NUMERO": "3B",
+  "TIPO": "LOTE",
+  "SUB TOTAL": 992082,
+  "IVA": 0,
+  "TOTAL": 992082,
+  "COBRADO": 10000,
+  "DEUDA": 982082,
+  "PROYECCION": 99208.2,
+  "MOROSIDAD": -89208.2,
+  "ESTATUS": "MOROSO",
+  "ESTATUS DEPARTAMENTAL": "CUSTOMER SERVICE",
+  "ComentariosP": "CLIENTE NO HA PAGADO ENGANCHE, TEMA COMERCIAL"
+},
+{
+  "_id": {
+    "$oid": "6414c1e31fef942482b9850f"
+  },
+  "No": 553,
+  "CONJUNTO": "CELTA",
+  "NUMERO": "3C",
+  "TIPO": "LOTE",
+  "SUB TOTAL": 992082,
+  "IVA": 0,
+  "TOTAL": 992082,
+  "COBRADO": 10000,
+  "DEUDA": 982082,
+  "PROYECCION": 99208.2,
+  "MOROSIDAD": -89208.2,
+  "ESTATUS": "MOROSO",
+  "ESTATUS DEPARTAMENTAL": "CUSTOMER SERVICE",
+  "ComentariosP": "CLIENTE NO HA PAGADO ENGANCHE, TEMA COMERCIAL"
+},
+{
+  "_id": {
+    "$oid": "6414c1e31fef942482b98510"
+  },
+  "No": 558,
+  "CONJUNTO": "CELTA",
+  "NUMERO": "3D",
+  "TIPO": "LOTE",
+  "SUB TOTAL": 908523,
+  "IVA": 0,
+  "TOTAL": 908523,
+  "COBRADO": 192717,
+  "DEUDA": 715806,
+  "PROYECCION": 208891.47,
+  "MOROSIDAD": -16174.47,
+  "ESTATUS": "MOROSO",
+  "ESTATUS DEPARTAMENTAL": "COBRANZA",
+  "ComentariosP": "null"
+},
+{
+  "_id": {
+    "$oid": "6414c1e31fef942482b98511"
+  },
+  "No": 576,
+  "CONJUNTO": "CELTA",
+  "NUMERO": "6G",
+  "TIPO": "LOTE",
+  "SUB TOTAL": 1774058.29,
+  "IVA": 0,
+  "TOTAL": 1774058.29,
+  "COBRADO": 177407.06,
+  "DEUDA": 1596651.23,
+  "PROYECCION": 198103.18,
+  "MOROSIDAD": -20696.12,
+  "ESTATUS": "MOROSO",
+  "ESTATUS DEPARTAMENTAL": "COBRANZA",
+  "ComentariosP": "null"
+},
+{
+  "_id": {
+    "$oid": "6414c1e31fef942482b98512"
+  },
+  "No": 0,
+  "CONJUNTO": "null",
+  "NUMERO": "null",
+  "TIPO": "null",
+  "SUB TOTAL": 275604682.165958,
+  "IVA": 31837829.0137226,
+  "TOTAL": 307442511.18144,
+  "COBRADO": 154525783.3902,
+  "DEUDA": 152921969.81124,
+  "PROYECCION": 200363520.949,
+  "MOROSIDAD": -45837737.5588,
+  "ESTATUS": "null",
+  "ESTATUS DEPARTAMENTAL": "null",
+  "ComentariosP": "null"
+}]
