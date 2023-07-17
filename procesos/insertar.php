@@ -5,26 +5,27 @@
     $Crud = new Crud();
 
     $datos = array(
-        "semana" => $_POST['semana'], 
-        "fecha" => $_POST['fecha'],
-        "beneficiario" => $_POST['beneficiario'],
-        "ingreso" => $_POST['ingreso'],
-        "egreso" => $_POST['egreso'], 
-        "motivo" => $_POST['motivo'],
-        "obra" => $_POST['obra'],
-        "categoria" => $_POST['categoria'],
-        "subcat" => $_POST['subcat'], 
-        "modelon" => $_POST['modelon'],
-        "ineg" => $_POST['ineg'],
-        "fpago" => $_POST['fpago'],
-        "mes1" => $_POST['mes1'], 
-        "nave" => $_POST['nave'],
+        "No" => $_POST['no'], 
+        "CONJUNTO" => $_POST['conjunto'],
+        "NUMERO" => $_POST['numero'],
+        "TIPO" => $_POST['tipo'],
+        "SUB_TOTAL" => $_POST['sub_total'],
+        "IVA" => $_POST['iva'],
+        "TOTAL" => $_POST['total'],
+        "INT_FINANCIAMIENTO" => $_POST['int_financiamiento'],
+        "COBRADO" => $_POST['cobrado'],
+        "DEUDA" => $_POST['deuda'],
+        "PROYECCION" => $_POST['proyeccion'],
+        "MOROSIDAD" => $_POST['morosidad'],
+        "ESTATUS" => $_POST['estatus'],
+        "COMENTARIOS" => $_POST['comentarios'],
+        "Columna1" => $_POST['columna_1']
     );
 
-   $respuesta = $Crud->insertarDatos($datos);
+    $respuesta = $Crud->insertarDatos($datos);
 
     if ($respuesta->getInsertedId() > 0) {
-        header("location:../index.php");
+        header("location:../view/Atraso_Proyeccion/index.php");
     } else {
         print_r($respuesta);
    }
