@@ -11,27 +11,36 @@
 <div class="card mt-4">
   <div class="card-body">
             <div class="col">
-                <h2>Cobranza Proyeccion</h2>
-                <a href="../../agregar.php" class="btn btn-primary">
+                <h2>Cobranza1</h2>
+                <a href="./agregar.php" class="btn btn-primary">
                 Agregar registro 
+                </a>
+                <a href="../../index.php" class="btn btn-outline-info">
+                    Regresar
                 </a>
                 <hr>
                 <table class="table table-sm table-hover table-bordered" id="tabla">
                     <thead>
-                        <th>No.</th>
+                        <th>Llave</th>
+                        <th>No</th>                        
                         <th>Conjunto</th>
                         <th>Numero</th>
                         <th>Tipo</th>
                         <th>Sub Total</th>
                         <th>Iva</th>
                         <th>Total</th>
+                        <th>Interes de Financiamiento</th>
                         <th>Cobrado</th>
                         <th>Deuda</th>
                         <th>Proyeccion</th>
-                        <th>Morosidad</th>
                         <th>Estatus</th>
-                        <th>Estatus Depto.</th>
-                        <th>ComentariosP</th>
+                        <th>Morosidad</th>
+                        <th>Columna 1</th>
+                        <th>Estatus Departamental</th>
+                        <th>Columna 17</th>
+                        <th>Comentarios</th>
+                        <th>Modificar</th>
+                        <th>Eliminar</th>
                     </thead>
                     <tbody>
 
@@ -39,20 +48,40 @@
                           foreach($datos as $item) {
                         ?>
                         <tr>
+                          <td class="text-center"> <?php echo $item->LLAVE; ?> </td>
                           <td class="text-center"> <?php echo $item->No; ?> </td>
                           <td class="text-center"> <?php echo $item->CONJUNTO;?> </td>
                           <td class="text-center"> <?php echo $item->NUMERO;?> </td>
                           <td class="text-center"> <?php echo $item->TIPO; ?> </td>
-                          <td class="text-center"> <?php echo $item->SUBTOTAL;?> </td>
-                          <td class="text-center"> <?php echo $item->IVA;?> </td>
-                          <td class="text-center"> <?php echo $item->TOTAL;?></td>
-                          <td class="text-center"> <?php echo $item->COBRADO;?></td>
-                          <td class="text-center"> <?php echo $item->DEUDA; ?> </td>
-                          <td class="text-center"> <?php echo $item->PROYECCION;?> </td>
-                          <td class="text-center"> <?php echo $item->MOROSIDAD;?> </td>
+                          <td class="text-center"> <?php echo "$".number_format($item->SUB_TOTAL,2); ?> </td>
+                          <td class="text-center"> <?php echo "$".number_format($item->IVA,2);?> </td>
+                          <td class="text-center"> <?php echo "$".number_format($item->TOTAL,2);?></td>
+                          <td class="text-center"> <?php echo "$".number_format($item->INT_FINANCIAMIENTO,2);?></td>
+                          <td class="text-center"> <?php echo "$".number_format($item->COBRADO,2);?></td>
+                          <td class="text-center"> <?php echo "$".number_format($item->DEUDA,2); ?> </td>
+                          <td class="text-center"> <?php echo "$".number_format($item->PROYECCION,2);?> </td>
                           <td class="text-center"> <?php echo $item->ESTATUS;?> </td>
-                          <td class="text-center"> <?php echo $item->ESTATUSDEPARTAMENTAL;?> </td>
-                          <td class="text-center"> <?php echo $item->ComentariosP;?> </td>
+                          <td class="text-center"> <?php echo "$".number_format($item->MOROSIDAD,2);?> </td>
+                          <td class="text-center"> <?php echo $item->Columna1;?> </td>
+                          <td class="text-center"> <?php echo $item->ESTATUS_DEPARTAMENTAL;?></td>
+                          <td class="text-center"> <?php echo $item->Column17;?> </td>
+                          <td class="text-center"> <?php echo $item->COMENTARIOS;?> </td>
+                          <td class="text-center">
+                          <form action="./actualizar.php" method="POST">
+                            <input type="text" name="id" id="id" hidden value="<?php echo $item->_id?>">
+                              <button class="btn btn-warning">
+                                <i class="fa-solid fa-user-pen"></i>
+                              </button>
+                            </form>
+                          </td>
+                          <td class="text-center">
+                          <form action="./eliminar.php" method="POST">
+                            <input type="text" name="id" id="id" hidden value="<?php echo $item->_id?>">
+                              <button class="btn btn-danger">
+                                <i class="fa-solid fa-user-xmark"></i>
+                              </button>
+                            </form> 
+                          </td>
                         </tr>
                           <?php } ?> 
 

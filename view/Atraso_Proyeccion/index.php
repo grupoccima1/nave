@@ -3,7 +3,7 @@
      require_once "../../clases/Conexion.php";
      require_once "./crud.php";
      $crud = new Crud();
-    $datos = $crud->mostrarDatos();
+     $datos = $crud->mostrarDatos(); 
     
 ?>
 
@@ -14,8 +14,11 @@
   <div class="card-body">
             <div class="col">
                 <h2>Atraso Proyeccion</h2>
-                <a href="../../agregar.php" class="btn btn-primary">
+                <a href="./agregar.php" class="btn btn-primary">
                 Agregar registro 
+                </a>
+                <a href="../../index.php" class="btn btn-outline-info">
+                    Regresar
                 </a>
                 <hr>
                 <table class="table table-sm table-hover table-bordered" id="tabla">
@@ -35,8 +38,8 @@
                         <th>Estatus</th> -->
                         <th>Comentarios</th>
                         <th>Columna1</th>
-                        <th>Eliminar</th>
                         <th>Modificar</th>
+                        <th>Eliminar</th>
                     </thead>
                     <tbody>
 
@@ -44,7 +47,7 @@
                           foreach($datos as $item) {
                         ?>
                         <tr>
-                        <td class="text-center"> <?php echo $item->No; ?> </td>
+                          <td class="text-center"> <?php echo $item->No; ?> </td>
                           <td class="text-center"> <?php echo $item->CONJUNTO;?> </td>
                           <td class="text-center"> <?php echo $item->NUMERO;?> </td>
                           <td class="text-center"> <?php echo $item->TIPO; ?> </td>
@@ -60,15 +63,16 @@
                           <td class="text-center"> <?php echo $item->COMENTARIOS;?> </td>
                           <td class="text-center"> <?php echo $item->Columna1;?> </td>
                           <td class="text-center"> 
-                            <form action="./../../actualizar.php" method="post">
+                            <form action="./actualizar.php" method="POST">
+                            <input type="text" name="id" id="id" hidden value="<?php echo $item->_id?>">
                               <button class="btn btn-warning">
                                 <i class="fa-solid fa-user-pen"></i>
                               </button>
                             </form>
                           </td>
                           <td class="text-center">
-                          <form action="./../../eliminar.php" method="post">
-                            <input type="text" name="id" id="id"  value="<?php echo $item->_id?> " hidden>
+                          <form action="./eliminar.php" method="POST">
+                            <input type="text" name="id" id="id" hidden value="<?php echo $item->_id?>">
                               <button class="btn btn-danger">
                                 <i class="fa-solid fa-user-xmark"></i>
                               </button>
