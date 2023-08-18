@@ -1,8 +1,11 @@
 <?php
-    include "../clases/Conexion.php";
-    include "../view/Naves/crud.php";
+   include "../clases/Conexion.php";
+   include "../clases/crud.php";
 
     $Crud = new Crud();
+    $id = $_POST['id'];
+
+    
 
     $datos = array(
         "No" => $_POST['no'],
@@ -68,17 +71,15 @@
         "COSTO_X_KVA" => $_POST['costo_kva'],
         "LLAVE_COBRANZA" => $_POST['llave_cobranza'],
         "CLAVE_CATASTRAL" => $_POST['clave_catastral'],
-        "CUENTA_PREDIAL" => $_POST['cuenta_predial']        
+        "CUENTA_PREDIAL" => $_POST['cuenta_predial']
     );
 
 
-    $respuesta = $Crud->insertarDatos($datos);
+    $respuesta = $Crud->actualizar($id, $datos);
 
-    if ($respuesta->getInsertedId() > 0){
+    if($respuesta->getModifiedCount() > 0 || $respuesta->getMatchedCount() > 0) {
         header("location:../view/Naves/index.php");
-    } else {
+    }else {
         print_r($respuesta);
-   }
-    
-
+    }
 ?>
