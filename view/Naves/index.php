@@ -120,8 +120,8 @@
                           <td class="text-center"> <?php echo $item->COMP_FISCAL;?> </td>
                           <td class="text-center"> <?php echo $item->EMPRESA_QUE_FACTURA;?> </td>
                           <td class="text-center"> <?php echo $item->MESES_FINANCIADOS;?> </td>
-                          <td class="text-center"> <?php echo $item->MES_S_INTERES;?> </td>
-                          <td class="text-center"> <?php echo $item->MES_C_INTERES;?> </td>
+                          <td class="text-center"> <?php echo number_format($item->MES_S_INTERES);?> </td>
+                          <td class="text-center"> <?php echo number_format($item->MES_C_INTERES);?> </td>
                           <td class="text-center"> <?php echo $item->INICIO_MENSUALIDADES;?> </td>
                           <td class="text-center"> <?php echo $item->TERMINO_MENSUALIDES;?> </td>
                           <td class="text-center"> <?php echo "$".number_format(floatval($item->COMISION),2);?> </td>
