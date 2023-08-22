@@ -1,10 +1,9 @@
 <?php
    include "../clases/Conexion.php";
-   include "../clases/crud.php";
+   include "../view/Naves/crud.php";
 
     $Crud = new Crud();
     $id = $_POST['id'];
-
     
 
     $datos = array(
@@ -34,8 +33,8 @@
         "COMP_FISCAL" => $_POST['comp_fiscal'],
         "EMPRESA_QUE_FACTURA" => $_POST['empresa_factura'],
         "MESES_FINANCIADOS" => $_POST['meses_financiados'],
-        "MES_S_INTERESES" => $_POST['meses_s_intereses'],
-        "MES_C_INTERESES" => $_POST['meses_c_intereses'],
+        "MES_S_INTERES" => $_POST['meses_s_interes'],
+        "MES_C_INTERES" => $_POST['meses_c_interes'],
         "INICIO_MENSUALIDADES" => $_POST['inicio_mensualidades'],
         "TERMINO_MENSUALIDES" => $_POST['termino_mensualidades'],
         "COMISION" => $_POST['comision'],
@@ -46,7 +45,7 @@
         "GARANTIA" => $_POST['garantia'],
         "VIGENCIA_GARANTIA" => $_POST['vigencia_garantia'],
         "ESTATUS_GARANTIA" => $_POST['estatus_garantia'],
-        "CXM2" => $_POST['cmx2'],
+        "CXM2" => $_POST['cxm2'],
         "COSTO" => $_POST['costo'],
         "FECHA_INICIO_PAGO_MTTO" => $_POST['fecha_inicio_pago_mtto'],
         "DUENO_ACTUAL_arrendador" => $_POST['dueno_actual'],
@@ -73,6 +72,7 @@
         "CLAVE_CATASTRAL" => $_POST['clave_catastral'],
         "CUENTA_PREDIAL" => $_POST['cuenta_predial']
     );
+
 
 
     $respuesta = $Crud->actualizar($id, $datos);
