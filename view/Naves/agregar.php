@@ -66,16 +66,16 @@
                     <input type="text" name="empresa_factura" id="empresa_factura" class="form-control">
                     <label for="meses_financiados">Meses Financiados</label>
                     <input type="text" name="meses_financiados" id="meses_financiados" class="form-control">
-                    <label for="meses_s_intereses">Meses Sin Intereses</label>
-                    <input type="text" name="meses_s_intereses" id="meses_s_intereses" class="form-control">
-                    <label for="meses_c_intereses">Meses Con Intereses</label>
-                    <input type="text" name="meses_c_intereses" id="meses_c_intereses" class="form-control">
+                    <label for="meses_s_interes">Meses Sin Intereses</label>
+                    <input type="text" name="meses_s_interes" id="meses_s_interes" class="form-control">
+                    <label for="meses_c_interes">Meses Con Intereses</label>
+                    <input type="text" name="meses_c_interes" id="meses_c_interes" class="form-control">
                     <label for="inicio_mensualidades">Inicio Mensualidades</label>
                     <input type="text" name="inicio_mensualidades" id="inicio_mensualidades" class="form-control">
                     <label for="termino_mensualidades">Termino Mensualidades</label>
                     <input type="text" name="termino_mensualidades" id="termino_mensualidades" class="form-control">
-                    <label for="Comision">Comision</label>
-                    <input type="text" name="Comision" id="Comision" class="form-control">
+                    <label for="comision">Comision</label>
+                    <input type="text" name="comision" id="comision" class="form-control">
                     <label for="estatus_comision">Estatus Comision</label>
                     <input type="text" name="estatus_comision" id="estatus_comision" class="form-control">
                     <label for="asesor">Asesor</label>
