@@ -1,6 +1,6 @@
 <?php 
 
-    require_once  $_SERVER['DOCUMENT_ROOT'] . "/naves/vendor/autoload.php";
+    require_once  $_SERVER['DOCUMENT_ROOT'] . "/nave/vendor/autoload.php";
     
         class Conexion {
         public function conectar(){
