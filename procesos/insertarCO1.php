@@ -29,7 +29,7 @@
     $respuesta = $Crud->insertarDatos($datos);
 
     if ($respuesta->getInsertedId() > 0){
-        header("location:../view/Cobranza_proyeccion/index.php");
+        header("location:../cobranza1.php");
     } else {
         print_r($respuesta);
    }

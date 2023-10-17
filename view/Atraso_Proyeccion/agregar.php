@@ -7,13 +7,13 @@
   <div class="card-body">
             <div class="col">
 
-                <a href="./index.php" class="btn btn-outline-info">
+                <a href="../../atrasos.php" class="btn btn-outline-info">
                     Regresar
                 </a>
 
                 <h2>Nuevo Registro</h2>
 
-                <form action="../../procesos/insertarAP.php" method="post">
+                <form action="../../procesos/insertarAP.php" method="POST">
                     <label for="no">Numero </label>
                     <input type="text" name="no" id="no" class="form-control">
                     <label for="conjunto">Conjunto</label>
@@ -23,7 +23,7 @@
                     <label for="tipo">Tipo</label>
                     <input type="text" name="tipo" id="tipo" class="form-control">
                     <label for="subtotal">Sub total</label>
-                    <input type="text" name="sub_total" id="sub_total" class="form-control">
+                    <input type="text" name="subtotal" id="subtotal" class="form-control">
                     <label for="iva">Iva</label>
                     <input type="text" name="iva" id="iva" class="form-control">
                     <label for="total">Total</label>

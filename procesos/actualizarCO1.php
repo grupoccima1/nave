@@ -32,7 +32,7 @@
     $respuesta = $Crud->actualizar($id, $datos);
 
     if($respuesta->getModifiedCount() > 0 || $respuesta->getMatchedCount() > 0) {
-        header("location:../view/Cobranza_proyeccion/index.php");
+        header("location:../cobranza1.php");
     }else {
         print_r($respuesta);
     }

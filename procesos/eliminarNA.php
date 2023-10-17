@@ -8,7 +8,7 @@
     $respuesta = $crud->eliminar($id);
 
     if($respuesta->getDeletedCount()> 0){
-        header("location:../view/Naves/index.php");
+        header("location:../naves.php");
     }else{
         print_r($respuesta);
     }

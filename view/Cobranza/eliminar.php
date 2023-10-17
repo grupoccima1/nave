@@ -16,7 +16,7 @@
   <div class="card-body">
             <div class="col">
 
-                <a href="./Cobranza/index.php" class="btn btn-outline-info">
+                <a href="../../cobranza.php" class="btn btn-outline-info">
                     Regresar
                 </a>
 
