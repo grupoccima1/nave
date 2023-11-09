@@ -383,3 +383,7 @@ p{
 .dataTable-sorter::before {
     border-top: 4px solid #fff !important;
 }
+.chart{
+    width: 100%;
+    height: 400px;
+}

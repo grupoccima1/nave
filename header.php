@@ -7,6 +7,7 @@
     <title>Macro Navetec</title>
     <link rel="shortcut icon" type="image/x-icon" href="./public/img/icons/logo-icon.ico">
     <link rel="stylesheet" href="./public/bootstrap5/bootstrap.min.css">
+    <link rel="stylesheet" href="">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
     <link rel="stylesheet" href="./public/fontawesome-free-6.2.0-web/css/all.css">
     <link rel="stylesheet" href="./public/fontawesome-free-6.2.0-web/css/all.min.css">
