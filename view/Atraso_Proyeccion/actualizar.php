@@ -18,7 +18,7 @@
   <div class="card-body">
             <div class="col">
 
-                <a href="./index.php" class="btn btn-outline-info">
+                <a href="../../atrasos.php" class="btn btn-outline-info">
                     Regresar
                 </a>
 
@@ -35,13 +35,13 @@
                     <label for="tipo">Tipo</label>
                     <input type="text" name="tipo" id="tipo" class="form-control" value="<?php echo $datos->TIPO ?>">
                     <label for="subtotal">Sub total</label>
-                    <input type="text" name="sub_total" id="sub_total" class="form-control" value="<?php echo -$datos->SUB_TOTAL ?>">
+                    <input type="text" name="subtotal" id="subtotal" class="form-control" value="<?php echo -$datos->SUB_TOTAL ?>">
                     <label for="iva">Iva</label>
                     <input type="text" name="iva" id="iva" class="form-control" value="<?php echo $datos->IVA ?>">
                     <label for="total">Total</label>
                     <input type="text" name="total" id="total" class="form-control" value="<?php echo $datos->TOTAL ?>">
                     <label for="int_financiamiento">Interes de Financiamiento</label>
-                    <input type="text" name="int_financiamiento" id="int_financiamiento" class="form-control"
+                    <input type="text" name="int_financiamiento " id="int_financiamiento" class="form-control"
                         value="<?php echo $datos->INT_FINANCIAMIENTO ?>">
                     <label for="cobrado">Cobrado</label>
                     <input type="text" name="cobrado" id="cobrado" class="form-control" value="<?php echo $datos->COBRADO ?>">

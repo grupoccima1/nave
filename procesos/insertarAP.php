@@ -1,6 +1,6 @@
 <?php
     include "../clases/Conexion.php";
-    include "../clases/crud.php";
+    include "../view/Atraso_Proyeccion/crud.php";
 
     $Crud = new Crud();
 
@@ -9,7 +9,7 @@
         "CONJUNTO" => $_POST['conjunto'],
         "NUMERO" => $_POST['numero'],
         "TIPO" => $_POST['tipo'],
-        "SUB_TOTAL" => $_POST['sub_total'],
+        "SUB_TOTAL" => $_POST['subtotal'],
         "IVA" => $_POST['iva'],
         "TOTAL" => $_POST['total'],
         "INT_FINANCIAMIENTO" => $_POST['int_financiamiento'],
@@ -25,7 +25,7 @@
     $respuesta = $Crud->insertarDatos($datos);
 
     if ($respuesta->getInsertedId() > 0) {
-        header("location:../view/Atraso_Proyeccion/index.php");
+        header("location:../atrasos.php");
     } else {
         print_r($respuesta);
    }

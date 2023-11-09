@@ -16,7 +16,7 @@
   <div class="card-body">
             <div class="col">
 
-                <a href="./index.php" class="btn btn-outline-info">
+                <a href="../../atrasos.php" class="btn btn-outline-info">
                     Regresar
                 </a>
 
@@ -32,11 +32,7 @@
                         <th>Iva</th>
                         <th>Total</th>
                         <th>Int. Financiamiento</th>
-                        <!-- <th>Cobrado</th>
-                        <th>Deuda</th> -->
                         <th>Proyeccion</th>
-                        <!-- <th>Morosidad</th>
-                        <th>Estatus</th> -->
                         <th>Comentarios</th>
                         <th>Columna1</th>
 
@@ -51,11 +47,7 @@
                             <td><?php echo $datos->IVA?></td>
                             <td><?php echo $datos->TOTAL?></td>
                             <td><?php echo $datos->INT_FINANCIAMIENTO?></td>
-                            <!-- <td><?php echo $datos->COBRADO?></td>
-                            <td><?php echo $datos->DEUDA?></td> -->
                             <td><?php echo $datos->PROYECCION?></td>
-                            <!-- <td><?php echo $datos->MOROSIDAD?></td>
-                            <td><?php echo $datos->ESTATUS?></td> -->
                             <td><?php echo $datos->COMENTARIOS?></td>
                             <td><?php echo $datos->Columna1?></td>
                         </tr>

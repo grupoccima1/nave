@@ -28,7 +28,7 @@
     $respuesta = $Crud->actualizar($id, $datos);
 
     if($respuesta->getModifiedCount() > 0 || $respuesta->getMatchedCount() > 0) {
-        header("location:../view/Cobranza/index.php");
+        header("location:../cobranza.php");
     }else {
         print_r($respuesta);
     }

@@ -75,7 +75,7 @@
     $respuesta = $Crud->insertarDatos($datos);
 
     if ($respuesta->getInsertedId() > 0){
-        header("location:../view/Naves/index.php");
+        header("location:../naves.php");
     } else {
         print_r($respuesta);
    }

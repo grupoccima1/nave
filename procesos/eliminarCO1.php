@@ -8,7 +8,7 @@
     $respuesta = $crud->eliminar($id);
 
     if($respuesta->getDeletedCount()> 0){
-        header("location:../view/Cobranza_proyeccion/index.php");
+        header("location:../cobranza1.php");
     }else{
         print_r($respuesta);
     }

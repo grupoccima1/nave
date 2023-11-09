@@ -34,7 +34,7 @@ class Crud extends Conexion {
         try {
             $conexion = parent::conectar();
             $coleccion = $conexion->atraso;
-            $respuesta = $coleccion->isertOne($datos);
+            $respuesta = $coleccion->insertOne($datos);
             return $respuesta;
         } catch (\Throwable $th) {
             return $th->getMessage();
@@ -63,7 +63,7 @@ class Crud extends Conexion {
             $respuesta = $coleccion->updateOne(
                                             ['_id' => new MongoDB\BSON\ObjectId($id)],
                                             [
-                                                'set' => $datos
+                                                '$set' => $datos
                                             ]
                                         );
             return $respuesta;

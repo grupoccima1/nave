@@ -35,7 +35,7 @@
     $respuesta = $Crud->actualizar($id, $datos);
 
     if($respuesta->getModifiedCount() > 0 || $respuesta->getMatchedCount() > 0) {
-        header("location:../view/General/index.php");
+        header("location:../general.php");
     }else {
         print_r($respuesta);
     }

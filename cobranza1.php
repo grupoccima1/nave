@@ -1,9 +1,9 @@
 <?php include "./header.php"; ?>
 <?php
 require_once "./clases/Conexion.php";
-  require_once "./clases/crud.php";
+  require_once "./view/Cobranza_proyeccion/crud.php";
   $crud = new Crud();
-  $datos = $crud->mostrarDatosco1();
+  $datos = $crud->mostrarDatos();
 ?>
 
     <header class="header" id="header">
@@ -49,6 +49,9 @@ require_once "./clases/Conexion.php";
             <div class="row">
                 <div class="col-12 mt-3 mb-3">
                     <h1 class="text-blue-900">Cobranza 1</h1>
+                    <a href="./view/Cobranza_proyeccion/agregar.php" class="btn btn-primary">
+                        Agregar registro 
+                    </a>
                 </div>
             </div>
             <div class="row">
@@ -70,6 +73,8 @@ require_once "./clases/Conexion.php";
                         <th>Columna1</th>
                         <th>Columna17</th>
                         <th>Comentarios</th>
+                        <th>Modificar</th>
+                        <th>Eliminar</th>
                     </thead>
                     <tbody>
 
@@ -92,6 +97,22 @@ require_once "./clases/Conexion.php";
                           <td class="text-center"> <?php echo $item->Columna1;?> </td>
                           <td class="text-center"> <?php echo $item->Column17;?> </td>
                           <td class="text-center"> <?php echo $item->COMENTARIOS;?> </td>
+                          <td class="text-center"> 
+                            <form action="./view/Cobranza_proyeccion/actualizar.php" method="POST">
+                            <input type="text" name="id" id="id" hidden value="<?php echo $item->_id?>">
+                              <button class="btn btn-warning">
+                                <i class="fa-solid fa-user-pen"></i>
+                              </button>
+                            </form>
+                          </td>
+                          <td class="text-center">
+                          <form action="./view/Cobranza_proyeccion/eliminar.php" method="POST">
+                            <input type="text" name="id" id="id" hidden value="<?php echo $item->_id?>">
+                              <button class="btn btn-danger">
+                                <i class="fa-solid fa-user-xmark"></i>
+                              </button>
+                            </form> 
+                          </td>
                         </tr>
                           <?php } ?> 
 

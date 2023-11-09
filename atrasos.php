@@ -1,7 +1,7 @@
 <?php include "./header.php"; ?>
 <?php
 require_once "./clases/Conexion.php";
-  require_once "./clases/crud.php";
+  require_once "./view/Atraso_Proyeccion/crud.php";
   $crud = new Crud();
   $datos = $crud->mostrarDatos();
 ?>
@@ -49,25 +49,28 @@ require_once "./clases/Conexion.php";
             <div class="row">
                 <div class="col-12 mt-3 mb-3">
                     <h1 class="text-blue-900">Atrasos </h1>
+                    <a href="./view/Atraso_Proyeccion/agregar.php" class="btn btn-primary">
+                        Agregar registro 
+                    </a>
                 </div>
             </div>
             <div class="row">
               <div class="col-12">
               <table class="table table-sm table-hover table-bordered" id="tabla">
                     <thead class="bg-blue-900 text-white">
-                        <th>No</th>                        
+                    <th>No.</th>
                         <th>Conjunto</th>
                         <th>Numero</th>
                         <th>Tipo</th>
+                        <th>Sub Total</th>
                         <th>Iva</th>
                         <th>Total</th>
-                        <th>Cobrado</th>
-                        <th>Deuda</th>
+                        <th>Int. Financiamiento</th>
                         <th>Proyeccion</th>
-                        <th>Morosidad</th>
-                        <th>Estatus</th>
                         <th>Comentarios</th>
                         <th>Columna1</th>
+                        <th>Modificar</th>
+                        <th>Eliminar</th>
                     </thead>
                     <tbody>
 
@@ -75,19 +78,33 @@ require_once "./clases/Conexion.php";
                           foreach($datos as $item) {
                         ?>
                         <tr>
-                          <td class="text-center"> <?php echo $item->No; ?> </td>
+                          <td class="text-center"> <?php echo number_format($item->No,0); ?> </td>
                           <td class="text-center"> <?php echo $item->CONJUNTO;?> </td>
                           <td class="text-center"> <?php echo $item->NUMERO;?> </td>
                           <td class="text-center"> <?php echo $item->TIPO; ?> </td>
+                          <td class="text-center"> <?php echo "$".number_format($item->SUB_TOTAL,2);?> </td>
                           <td class="text-center"> <?php echo "$".number_format($item->IVA,2);?> </td>
                           <td class="text-center"> <?php echo "$".number_format($item->TOTAL,2);?></td>
-                          <td class="text-center"> <?php echo "$".number_format($item->COBRADO,2);?></td>
-                          <td class="text-center"> <?php echo "$".number_format($item->DEUDA,2); ?> </td>
+                          <td class="text-center"> <?php echo "$".number_format($item->INT_FINANCIAMIENTO,2);?></td>
                           <td class="text-center"> <?php echo "$".number_format($item->PROYECCION,2);?> </td>
-                          <td class="text-center"> <?php echo "$".number_format($item->MOROSIDAD,2);?> </td>
-                          <td class="text-center"> <?php echo $item->ESTATUS;?> </td>
                           <td class="text-center"> <?php echo $item->COMENTARIOS;?> </td>
                           <td class="text-center"> <?php echo $item->Columna1;?> </td>
+                          <td class="text-center"> 
+                            <form action="./view/Atraso_Proyeccion/actualizar.php" method="POST">
+                            <input type="text" name="id" id="id" hidden value="<?php echo $item->_id?>">
+                              <button class="btn btn-warning">
+                                <i class="fa-solid fa-user-pen"></i>
+                              </button>
+                            </form>
+                          </td>
+                          <td class="text-center">
+                          <form action="./view/Atraso_Proyeccion/eliminar.php" method="POST">
+                            <input type="text" name="id" id="id" hidden value="<?php echo $item->_id?>">
+                              <button class="btn btn-danger">
+                                <i class="fa-solid fa-user-xmark"></i>
+                              </button>
+                            </form> 
+                          </td>
                         </tr>
                           <?php } ?> 
 

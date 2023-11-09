@@ -18,7 +18,7 @@
   <div class="card-body">
             <div class="col">
 
-                <a href="./index.php" class="btn btn-outline-info">
+                <a href="../../general.php" class="btn btn-outline-info">
                     Regresar
                 </a>
 
