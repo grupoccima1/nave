@@ -1,107 +1,149 @@
-const getChartEngregas = () => {
-    return {
-        color: ['#405189', '#0ab39c', '#f06548', '#f7b84b', '#299cdb', '#68A2B9', '#87A9E2', '#002856'],
-        title: {
-          text: 'Entregas'
-        },
-        tooltip: {
-          trigger: 'axis',
-          axisPointer: {
-            type: 'shadow'
-          }
-        },
-        legend: {},
-        grid: {
-          left: '3%',
-          right: '4%',
-          bottom: '3%',
-          containLabel: true
-        },
-        xAxis: {
-          type: 'value',
-          boundaryGap: [0, 0.01]
-        },
-        yAxis: {
-          type: 'category',
-          data: ['Santa Rosa', 'Beta', 'Gamma']
-        },
-        series: [
-          {
-            name: 'Pendiente',
-            type: 'bar',
-            data: [18203, 23489, 29034]
-          },
-          {
-            name: 'Entregado',
-            type: 'bar',
-            data: [19325, 23438, 31000]
-          }
-        ]
+const getChartEntregas = (datos) => {
+  if (!datos || !Array.isArray(datos)) {
+      console.error('Error: datos no está definido o no es un array');
+      return {};
+  }
+
+  // Extraer conjuntos únicos de los datos
+  const conjuntos = [...new Set(datos.map(item => item._id))];
+
+  const source = conjuntos.map(conjunto => {
+      const conjuntoData = datos.find(item => item._id === conjunto);
+      return {
+          conjunto: conjunto.toString(),
+          'Pendiente': conjuntoData ? conjuntoData.pendiente || 0 : 0,
+          'Entregado': conjuntoData ? conjuntoData.entregado || 0 : 0
       };
-};
-const getChartGarantias = () => {
-    return {
+  });
+
+  console.log(source);
+
+  return {
       color: ['#405189', '#0ab39c', '#f06548', '#f7b84b', '#299cdb', '#68A2B9', '#87A9E2', '#002856'],
-        title: {
-          text: 'Garantias'
-        },
-        tooltip: {
+      title: {
+          text: 'Entregas'
+      },
+      tooltip: {
           trigger: 'axis',
           axisPointer: {
-            type: 'shadow'
+              type: 'shadow'
           }
-        },
-        legend: {},
-        grid: {
+      },
+      legend: {},
+      grid: {
           left: '3%',
           right: '4%',
           bottom: '3%',
           containLabel: true
-        },
-        xAxis: {
+      },
+      xAxis: {
           type: 'value',
           boundaryGap: [0, 0.01]
-        },
-        yAxis: {
+      },
+      yAxis: {
           type: 'category',
-          data: ['Santa Rosa', 'Beta', 'Gamma']
-        },
-        series: [
+          data: conjuntos.map(conjunto => conjunto.toString())
+      },
+      series: [
           {
-            name: 'Vigente',
-            type: 'bar',
-            data: [18203, 23489, 29034]
+              name: 'Pendiente',
+              type: 'bar',
+              data: source.map(item => item.Pendiente)
           },
           {
-            name: 'Vencido',
-            type: 'bar',
-            data: [19325, 23438, 31000]
+              name: 'Entregado',
+              type: 'bar',
+              data: source.map(item => item.Entregado)
           }
-        ]
-      };
+      ]
+  };
 };
 
-const getChartEstCobranza = () => {
-    return {
-      color: ['#405189', '#0ab39c', '#f06548', '#f7b84b', '#299cdb', '#68A2B9', '#87A9E2', '#002856'],
-        xAxis: {
-          type: 'category',
-          data: ['Beta', 'Gamma', 'Santa Rosa' ]
-        },
-        yAxis: {
-          type: 'value'
-        },
-        series: [
-          {
-            data: [120, 200, 150 ],
-            type: 'bar',
-            showBackground: true,
-            backgroundStyle: {
-              color: 'rgba(180, 180, 180, 0.2)'
-            }
+const getChartGarantias = (data) => {
+  const colorPalette = ['#405189', '#0ab39c', '#f06548', '#f7b84b', '#299cdb', '#68A2B9', '#87A9E2', '#002856'];
+
+  const xAxisData = data.map(item => item.conjunto);
+  const seriesDataVigente = data.map(item => item.totalVigente);
+  const seriesDataVencido = data.map(item => item.totalVencido);
+
+  return {
+      color: colorPalette,
+      title: {
+          text: 'Garantias'
+      },
+      tooltip: {
+          trigger: 'axis',
+          axisPointer: {
+              type: 'shadow'
           }
-        ]
-      };
+      },
+      legend: {},
+      grid: {
+          left: '3%',
+          right: '4%',
+          bottom: '3%',
+          containLabel: true
+      },
+      xAxis: {
+          type: 'value',
+          boundaryGap: [0, 0.01]
+      },
+      yAxis: {
+          type: 'category',
+          data: xAxisData,
+      },
+      series: [
+          {
+              name: 'Vigente',
+              type: 'bar',
+              data: seriesDataVigente
+          },
+          {
+              name: 'Vencido',
+              type: 'bar',
+              data: seriesDataVencido
+          }
+      ]
+  };
+};
+
+
+
+
+
+
+const getChartEstCobranza = (datos) => {
+  const conjuntos = datos.map(item => item.conjunto);
+  const seriesData = datos.map(item => item.estatusCobranza.reduce((acc, curr) => acc + curr.count, 0));
+
+  return {
+      color: ['#405189', '#0ab39c', '#f06548', '#f7b84b', '#299cdb', '#68A2B9', '#87A9E2', '#002856'],
+      xAxis: {
+          type: 'category',
+          data: conjuntos,
+          axisLabel: {
+              interval: 0,
+              rotate: 45,
+              margin: 10,
+              formatter: function (value) {
+                  return value;
+              }
+          }
+      },
+      yAxis: {
+          type: 'value'
+      },
+      series: [
+          {
+              data: seriesData,
+              type: 'bar',
+              showBackground: true,
+              backgroundStyle: {
+                  color: 'rgba(180, 180, 180, 0.2)'
+              }
+          }
+      ]
+  };
 };
 
 const getChartPEVentas = () => {
@@ -147,61 +189,65 @@ const getChartPEIngresoR = () =>{
       };
 };
 
-const getChartTipoUso = () =>{
-    return {
-      color: ['#405189', '#0ab39c', '#f06548', '#f7b84b', '#299cdb', '#68A2B9', '#87A9E2', '#002856'],
-        title: {
+const getChartTipoUso = (datos) => {
+  const colores = ['#405189', '#0ab39c', '#f06548', '#f7b84b', '#299cdb', '#68A2B9', '#87A9E2', '#002856'];
+
+ 
+  const etiquetas = datos.map((dato) => dato.USO);
+  const porcentajes = datos.map((dato) => dato.porcentaje);
+
+  return {
+      color: colores,
+      title: {
           text: 'Tipo de Uso',
           subtext: 'Datos de Ejemplo',
-          left: 'center'
-        },
-        tooltip: {
-          trigger: 'item'
-        },
-        legend: {
+          left: 'center',
+      },
+      tooltip: {
+          trigger: 'item',
+      },
+      legend: {
           orient: 'vertical',
-          left: 'left'
-        },
-        series: [
+          left: 'left',
+      },
+      series: [
           {
-            name: 'Access From',
-            type: 'pie',
-            radius: '50%',
-            data: [
-              { value: 1048, name: 'Propio' },
-              { value: 735, name: 'Propio/Renta' },
-              { value: 580, name: 'Propio/Venta' },
-              { value: 484, name: 'Renta' },
-              { value: 300, name: 'Renta/Venta' },
-              { value: 300, name: 'Sin Definir' }
-            ],
-            emphasis: {
-              itemStyle: {
-                shadowBlur: 10,
-                shadowOffsetX: 0,
-                shadowColor: 'rgba(0, 0, 0, 0.5)'
-              }
-            }
-          }
-        ]
-      };
+              name: 'Access From',
+              type: 'pie',
+              radius: '50%',
+              data: datos.map((dato) => ({
+                  value: dato.porcentaje,
+                  name: dato.USO,
+              })),
+              emphasis: {
+                  itemStyle: {
+                      shadowBlur: 10,
+                      shadowOffsetX: 0,
+                      shadowColor: 'rgba(0, 0, 0, 0.5)',
+                  },
+              },
+          },
+      ],
+  };
 };
-const initCharts = () => {
-    const chartEntregas = echarts.init(document.getElementById("chartEntregas"));
-    const chartGarantias = echarts.init(document.getElementById("chartGarantias"));
-    const chartEstCobranza = echarts.init(document.getElementById("chartEstCobranza"));
-    const chartPEVentas = echarts.init(document.getElementById("chartPEVentas"));
-    const chartPEIngresoR = echarts.init(document.getElementById("chartPEIngresoR"));
-    const chartTipoUso = echarts.init(document.getElementById("chartTipoUso"));
 
-    chartEntregas.setOption(getChartEngregas());
-    chartGarantias.setOption(getChartGarantias());
-    chartEstCobranza.setOption(getChartEstCobranza());
-    chartPEVentas.setOption(getChartPEVentas());
-    chartPEIngresoR.setOption(getChartPEIngresoR());
-    chartTipoUso.setOption(getChartTipoUso());
 
+const initCharts = (entregasPorConjunto, vigencia, usos, cobranza) => {
+  const chartEntregas = echarts.init(document.getElementById("chartEntregas"));
+  const chartGarantias = echarts.init(document.getElementById("chartGarantias"));
+  const chartEstCobranza = echarts.init(document.getElementById("chartEstCobranza"));
+  const chartPEVentas = echarts.init(document.getElementById("chartPEVentas"));
+  const chartPEIngresoR = echarts.init(document.getElementById("chartPEIngresoR"));
+  const chartTipoUso = echarts.init(document.getElementById("chartTipoUso"));
+
+  chartEntregas.setOption(getChartEntregas(entregasPorConjunto));  // Cambiar a getChartEntregas
+  chartGarantias.setOption(getChartGarantias(vigencia));
+  chartEstCobranza.setOption(getChartEstCobranza(cobranza));
+  chartPEVentas.setOption(getChartPEVentas());
+  chartPEIngresoR.setOption(getChartPEIngresoR());
+  chartTipoUso.setOption(getChartTipoUso(usos));
 };
+
 window.addEventListener('load', () => {
-    initCharts();
+  initCharts(entregasPorConjunto, vigencia, usos, cobranza);
 });

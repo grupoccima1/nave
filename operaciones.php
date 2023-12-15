@@ -4,6 +4,10 @@ require_once "./clases/Conexion.php";
   require_once "./clases/crud.php";
   $crud = new Crud();
   $datos = $crud->mostrarDatos();
+  $entregasPorConjunto = $crud->consultarEntregasPorConjunto(); 
+  $vigencia = $crud->contarEstadosGarantiaPorConjunto(); 
+  $usos = $crud->obtenerPorcentajePorUso();
+  $cobranza = $crud->obtenerConteoPorConjuntoYEstadosCobranza();
 ?> 
 
 <header class="header" id="header">
@@ -97,6 +101,17 @@ require_once "./clases/Conexion.php";
     var table = document.querySelector("#tabla");
 
     var dataTale = new DataTable(table);
+</script>
+<script>
+    // Definir datos directamente en el script
+    const entregasPorConjunto = <?php echo json_encode($entregasPorConjunto); ?>;
+    const vigencia = <?php echo json_encode($vigencia); ?>;
+    const usos = <?php echo json_encode($usos); ?>;
+    const cobranza = <?php echo json_encode($cobranza); ?>;
+    // Llamar a la función para inicializar el gráfico de entregas
+    window.addEventListener('load', () => {
+        initCharts(entregasPorConjunto, vigencia, usos, cobranza);
+    });
 </script>
 <script src="js/operaciones.js"></script>
 <?php include "./script.php"; ?>

@@ -4,7 +4,14 @@ require_once "./clases/Conexion.php";
   require_once "./clases/crud.php";
   $crud = new Crud();
   $datos = $crud->mostrarDatos();
+  $datosNaves = $crud->consultarDatosNaves();
+  $datosN = $crud->consultarPorcentajeEstados();
+  $datosE = $crud->obtenerDatosPorConjuntoYEstado();
+  $datosR = $crud->calcularPorcentajeVentaPorAnio();
+  $datosT = $crud->calcularTotalVentaPorAnioYMes();
+  $datosU = $crud->obtenerConteoPorConjuntoYDisponibilidad();
 ?> 
+
 
 <header class="header" id="header">
     <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
@@ -201,46 +208,27 @@ require_once "./clases/Conexion.php";
                             </table>
                         </div>
                         <div class="tab-pane fade" id="todo" role="tabpanel" aria-labelledby="todo-tab">
-
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th>Conjunto</th>
-                                        <th>Numero</th>
-                                        <th>Comentarios</th>
-                                        <th>Proyección</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Aeropuerto</td>
-                                        <td>1A</td>
-                                        <td>marzo del 2022</td>
-                                        <td class="fw-bold">$0.00</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Aeropuerto</td>
-                                        <td>1A</td>
-                                        <td>marzo del 2022</td>
-                                        <td class="fw-bold">$0.00</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Aeropuerto</td>
-                                        <td>1A</td>
-                                        <td>marzo del 2022</td>
-                                        <td class="fw-bold">$0.00</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Aeropuerto</td>
-                                        <td>1A</td>
-                                        <td>marzo del 2022</td>
-                                        <td class="fw-bold">$0.00</td>
-                                    </tr>
-
-
-                                </tbody>
-                            </table>
-                        </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Conjunto</th>
+                <th>Numero</th>
+                <th>Comentarios</th>
+                <th>Proyección</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($datos as $dato){ ?>
+                <tr>
+                    <td><?php echo $dato['CONJUNTO']; ?></td>
+                    <td><?php echo $dato['NUMERO']; ?></td>
+                    <td><?php echo $dato['COMENTARIOS']; ?></td>
+                    <td class="fw-bold"><?php echo '$' . number_format($dato['PROYECCION'], 2); ?></td>
+                </tr>
+            <?php } ?>
+        </tbody>
+    </table>
+</div>
                     </div>
                 </div>
             </div>
@@ -256,6 +244,21 @@ require_once "./clases/Conexion.php";
     var table = document.querySelector("#tabla");
 
     var dataTale = new DataTable(table);
+</script>
+<script>
+  // Definir datos directamente en el script
+  const datosNaves = <?php echo json_encode($datosNaves); ?>;
+  const datosN = <?php echo json_encode($datosN); ?>;
+  const datosE = <?php echo json_encode($datosE); ?>;
+  const datosR = <?php echo json_encode($datosR); ?>;
+  const datosT = <?php echo json_encode($datosT); ?>;
+  const datosU = <?php echo json_encode($datosU); ?>;
+  // Llamar a la función para inicializar gráficos
+  window.addEventListener('load', () => {
+    initCharts(datosNaves, datosN, datosE, datosR, datosT, datosU);
+    console.log(datosNaves);
+console.log(datosN);
+  });
 </script>
 <script src="js/main.js"></script> 
 <?php include "./script.php"; ?>
