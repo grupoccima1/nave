@@ -8,6 +8,8 @@ require_once "./clases/Conexion.php";
   $vigencia = $crud->contarEstadosGarantiaPorConjunto(); 
   $usos = $crud->obtenerPorcentajePorUso();
   $cobranza = $crud->obtenerConteoPorConjuntoYEstadosCobranza();
+  $ocupacion = $crud->obtenerPorcentajeOcupacion();
+  $giro = $crud->obtenerPorcentajePorGiro();
 ?> 
 
 <header class="header" id="header">
@@ -119,9 +121,11 @@ require_once "./clases/Conexion.php";
     const vigencia = <?php echo json_encode($vigencia); ?>;
     const usos = <?php echo json_encode($usos); ?>;
     const cobranza = <?php echo json_encode($cobranza); ?>;
+    const ocupacion = <?php echo json_encode($ocupacion); ?>;
+    const giro = <?php echo json_encode($giro); ?>;
     // Llamar a la función para inicializar el gráfico de entregas
     window.addEventListener('load', () => {
-        initCharts(entregasPorConjunto, vigencia, usos, cobranza);
+        initCharts(entregasPorConjunto, vigencia, usos, cobranza, ocupacion, giro);
     });
 </script>
 <script src="js/operaciones.js"></script>

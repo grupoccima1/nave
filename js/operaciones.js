@@ -231,94 +231,97 @@ const getChartTipoUso = (datos) => {
   };
 };
 
-const getChartOcupacion = () =>{
+const getChartOcupacion = (data) => {
+  const colorPalette = ['#405189', '#0ab39c', '#f06548', '#f7b84b', '#299cdb', '#68A2B9', '#87A9E2', '#002856'];
 
-    return {
-        title: {
-            text: 'Ocupacion',
-            left: 'center'
-        },
-        tooltip: {
-          trigger: 'item'
-        },
-        legend: {
-          top: '5%',
-          left: 'center'
-        },
-        series: [
-          {
-            name: 'Access From',
-            type: 'pie',
-            radius: ['40%', '70%'],
-            avoidLabelOverlap: false,
-            label: {
-              show: false,
-              position: 'center'
-            },
-            emphasis: {
-              label: {
-                show: true,
-                fontSize: 40,
-                fontWeight: 'bold'
-              }
-            },
-            labelLine: {
-              show: false
-            },
-            data: [
-              { value: 84, name: 'SI' },
-              { value: 12, name: 'NO' },
-              { value: 4, name: 'NO SE' },
-            ]
-          }
-        ]
-      };
-  };
-  const getChartGiro = () =>{
-  
-    return {
-        title: {
-            text: 'Giro',
-            left: 'center'
-        },
-        tooltip: {
-          trigger: 'item'
-        },
-        legend: {
-          top: '5%',
-          left: 'center'
-        },
-        series: [
-          {
-            name: 'Access From',
-            type: 'pie',
-            radius: ['40%', '70%'],
-            avoidLabelOverlap: false,
-            label: {
-              show: false,
-              position: 'center'
-            },
-            emphasis: {
-              label: {
-                show: true,
-                fontSize: 40,
-                fontWeight: 'bold'
-              }
-            },
-            labelLine: {
-              show: false
-            },
-            data: [
-              { value: 84, name: 'SI' },
-              { value: 12, name: 'NO' },
-              { value: 4, name: 'NO SE' },
-            ]
-          }
-        ]
-      };
-  };
+  const seriesData = data.map(item => ({
+    value: item.porcentaje,
+    name: item.ocupacion
+  }));
 
-const initCharts = (entregasPorConjunto, vigencia, usos, cobranza) => {
+  return {
+    title: {
+      text: 'Ocupacion',
+      left: 'center'
+    },
+    tooltip: {
+      trigger: 'item'
+    },
+    legend: {
+      top: '5%',
+      left: 'center',
+      data: data.map(item => item.ocupacion),
+    },
+    series: [
+      {
+        name: 'Ocupacion',
+        type: 'pie',
+        radius: ['40%', '70%'],
+        avoidLabelOverlap: false,
+        label: {
+          show: false,
+          position: 'center'
+        },
+        emphasis: {
+          label: {
+            show: true,
+            fontSize: 14,
+            fontWeight: 'bold'
+          }
+        },
+        labelLine: {
+          show: false
+        },
+        data: seriesData,
+        color: colorPalette,
+      }
+    ]
+  };
+};
+
+const getChartGiro = (datos) => {
+  const seriesData = datos.map(item => ({ value: item.porcentaje, name: item.giro }));
+
+  return {
+    title: {
+      text: 'Giro',
+      left: 'center'
+    },
+    tooltip: {
+      trigger: 'item'
+    },
+    legend: {
+      top: '5%',
+      left: 'center'
+    },
+    series: [
+      {
+        name: 'Access From',
+        type: 'pie',
+        radius: ['40%', '70%'],
+        avoidLabelOverlap: false,
+        label: {
+          show: false,
+          position: 'center'
+        },
+        emphasis: {
+          label: {
+            show: true,
+            fontSize: 12,
+            fontWeight: 'bold'
+          }
+        },
+        labelLine: {
+          show: false
+        },
+        data: seriesData
+      }
+    ]
+  };
+};
+
+
+const initCharts = (entregasPorConjunto, vigencia, usos, cobranza, ocupacion, giro) => {
   const chartEntregas = echarts.init(document.getElementById("chartEntregas"));
   const chartGarantias = echarts.init(document.getElementById("chartGarantias"));
   const chartEstCobranza = echarts.init(document.getElementById("chartEstCobranza"));
@@ -334,10 +337,10 @@ const initCharts = (entregasPorConjunto, vigencia, usos, cobranza) => {
   chartPEVentas.setOption(getChartPEVentas());
   chartPEIngresoR.setOption(getChartPEIngresoR());
   chartTipoUso.setOption(getChartTipoUso(usos));
-  chartOcupacion.setOption(getChartOcupacion());
-  chartGiro.setOption(getChartGiro());
+  chartOcupacion.setOption(getChartOcupacion(ocupacion));
+  chartGiro.setOption(getChartGiro(giro));
 };
 
 window.addEventListener('load', () => {
-  initCharts(entregasPorConjunto, vigencia, usos, cobranza);
+  initCharts(entregasPorConjunto, vigencia, usos, cobranza, ocupacion, giro);
 });
