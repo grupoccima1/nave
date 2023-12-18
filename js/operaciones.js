@@ -233,92 +233,116 @@ const getChartTipoUso = (datos) => {
 
 const getChartOcupacion = () =>{
 
+  return {
+      title: {
+          text: 'Ocupacion',
+          left: 'center'
+      },
+      tooltip: {
+        trigger: 'item'
+      },
+      legend: {
+        top: '5%',
+        left: 'center'
+      },
+      series: [
+        {
+          name: 'Access From',
+          type: 'pie',
+          radius: ['40%', '70%'],
+          avoidLabelOverlap: false,
+          label: {
+            show: false,
+            position: 'center'
+          },
+          emphasis: {
+            label: {
+              show: true,
+              fontSize: 40,
+              fontWeight: 'bold'
+            }
+          },
+          labelLine: {
+            show: false
+          },
+          data: [
+            { value: 84, name: 'SI' },
+            { value: 12, name: 'NO' },
+            { value: 4, name: 'NO SE' },
+          ]
+        }
+      ]
+    };
+};
+const getChartGiro = () =>{
+
+  return {
+      title: {
+          text: 'Giro',
+          left: 'center'
+      },
+      tooltip: {
+        trigger: 'item'
+      },
+      legend: {
+        top: '5%',
+        left: 'center'
+      },
+      series: [
+        {
+          name: 'Access From',
+          type: 'pie',
+          radius: ['40%', '70%'],
+          avoidLabelOverlap: false,
+          label: {
+            show: false,
+            position: 'center'
+          },
+          emphasis: {
+            label: {
+              show: true,
+              fontSize: 40,
+              fontWeight: 'bold'
+            }
+          },
+          labelLine: {
+            show: false
+          },
+          data: [
+            { value: 84, name: 'SI' },
+            { value: 12, name: 'NO' },
+            { value: 4, name: 'NO SE' },
+          ]
+        }
+      ]
+    };
+};
+
+const getChartDeudaActual = () =>{
     return {
         title: {
-            text: 'Ocupacion',
+            text: 'Deuda Actual',
             left: 'center'
         },
-        tooltip: {
-          trigger: 'item'
-        },
-        legend: {
-          top: '5%',
-          left: 'center'
-        },
-        series: [
-          {
-            name: 'Access From',
-            type: 'pie',
-            radius: ['40%', '70%'],
-            avoidLabelOverlap: false,
-            label: {
-              show: false,
-              position: 'center'
-            },
-            emphasis: {
-              label: {
-                show: true,
-                fontSize: 40,
-                fontWeight: 'bold'
-              }
-            },
-            labelLine: {
-              show: false
-            },
-            data: [
-              { value: 84, name: 'SI' },
-              { value: 12, name: 'NO' },
-              { value: 4, name: 'NO SE' },
-            ]
-          }
-        ]
-      };
-  };
-  const getChartGiro = () =>{
-  
-    return {
-        title: {
-            text: 'Giro',
-            left: 'center'
-        },
-        tooltip: {
-          trigger: 'item'
-        },
-        legend: {
-          top: '5%',
-          left: 'center'
-        },
-        series: [
-          {
-            name: 'Access From',
-            type: 'pie',
-            radius: ['40%', '70%'],
-            avoidLabelOverlap: false,
-            label: {
-              show: false,
-              position: 'center'
-            },
-            emphasis: {
-              label: {
-                show: true,
-                fontSize: 40,
-                fontWeight: 'bold'
-              }
-            },
-            labelLine: {
-              show: false
-            },
-            data: [
-              { value: 84, name: 'SI' },
-              { value: 12, name: 'NO' },
-              { value: 4, name: 'NO SE' },
-            ]
-          }
-        ]
-      };
-  };
+        xAxis: {
+            type: 'category',
+            data: ['Beta', 'Gamma', 'Santa Rosa']
+          },
+          yAxis: {
+            type: 'value'
+          },
+          series: [
+            {
+              data: [0, 0, 150],
+              type: 'bar'
+            }
+          ]
+        
+    };
+}
 
 const initCharts = (entregasPorConjunto, vigencia, usos, cobranza) => {
+  const chartDeudaActual = echarts.init(document.getElementById("chartDeudaActual"));
   const chartEntregas = echarts.init(document.getElementById("chartEntregas"));
   const chartGarantias = echarts.init(document.getElementById("chartGarantias"));
   const chartEstCobranza = echarts.init(document.getElementById("chartEstCobranza"));
@@ -328,6 +352,9 @@ const initCharts = (entregasPorConjunto, vigencia, usos, cobranza) => {
   const chartOcupacion = echarts.init(document.getElementById("chartOcupacion"));
   const chartGiro = echarts.init(document.getElementById("chartGiro"));
 
+  
+  
+    chartDeudaActual.setOption(getChartDeudaActual());  // Cambiar a getChartEntregas
   chartEntregas.setOption(getChartEntregas(entregasPorConjunto));  // Cambiar a getChartEntregas
   chartGarantias.setOption(getChartGarantias(vigencia));
   chartEstCobranza.setOption(getChartEstCobranza(cobranza));
