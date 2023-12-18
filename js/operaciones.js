@@ -231,6 +231,92 @@ const getChartTipoUso = (datos) => {
   };
 };
 
+const getChartOcupacion = () =>{
+
+    return {
+        title: {
+            text: 'Ocupacion',
+            left: 'center'
+        },
+        tooltip: {
+          trigger: 'item'
+        },
+        legend: {
+          top: '5%',
+          left: 'center'
+        },
+        series: [
+          {
+            name: 'Access From',
+            type: 'pie',
+            radius: ['40%', '70%'],
+            avoidLabelOverlap: false,
+            label: {
+              show: false,
+              position: 'center'
+            },
+            emphasis: {
+              label: {
+                show: true,
+                fontSize: 40,
+                fontWeight: 'bold'
+              }
+            },
+            labelLine: {
+              show: false
+            },
+            data: [
+              { value: 84, name: 'SI' },
+              { value: 12, name: 'NO' },
+              { value: 4, name: 'NO SE' },
+            ]
+          }
+        ]
+      };
+  };
+  const getChartGiro = () =>{
+  
+    return {
+        title: {
+            text: 'Giro',
+            left: 'center'
+        },
+        tooltip: {
+          trigger: 'item'
+        },
+        legend: {
+          top: '5%',
+          left: 'center'
+        },
+        series: [
+          {
+            name: 'Access From',
+            type: 'pie',
+            radius: ['40%', '70%'],
+            avoidLabelOverlap: false,
+            label: {
+              show: false,
+              position: 'center'
+            },
+            emphasis: {
+              label: {
+                show: true,
+                fontSize: 40,
+                fontWeight: 'bold'
+              }
+            },
+            labelLine: {
+              show: false
+            },
+            data: [
+              { value: 84, name: 'SI' },
+              { value: 12, name: 'NO' },
+              { value: 4, name: 'NO SE' },
+            ]
+          }
+        ]
+      };
+  };
 
 const initCharts = (entregasPorConjunto, vigencia, usos, cobranza) => {
   const chartEntregas = echarts.init(document.getElementById("chartEntregas"));
@@ -239,6 +325,8 @@ const initCharts = (entregasPorConjunto, vigencia, usos, cobranza) => {
   const chartPEVentas = echarts.init(document.getElementById("chartPEVentas"));
   const chartPEIngresoR = echarts.init(document.getElementById("chartPEIngresoR"));
   const chartTipoUso = echarts.init(document.getElementById("chartTipoUso"));
+  const chartOcupacion = echarts.init(document.getElementById("chartOcupacion"));
+  const chartGiro = echarts.init(document.getElementById("chartGiro"));
 
   chartEntregas.setOption(getChartEntregas(entregasPorConjunto));  // Cambiar a getChartEntregas
   chartGarantias.setOption(getChartGarantias(vigencia));
@@ -246,6 +334,8 @@ const initCharts = (entregasPorConjunto, vigencia, usos, cobranza) => {
   chartPEVentas.setOption(getChartPEVentas());
   chartPEIngresoR.setOption(getChartPEIngresoR());
   chartTipoUso.setOption(getChartTipoUso(usos));
+  chartOcupacion.setOption(getChartOcupacion());
+  chartGiro.setOption(getChartGiro());
 };
 
 window.addEventListener('load', () => {
