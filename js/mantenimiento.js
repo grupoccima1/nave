@@ -155,17 +155,108 @@ const getChartGarantia = () =>{
       };
 };
 
+const getChartOcupacion = () =>{
+
+  return {
+      title: {
+          text: 'Ocupacion',
+          left: 'center'
+      },
+      tooltip: {
+        trigger: 'item'
+      },
+      legend: {
+        top: '5%',
+        left: 'center'
+      },
+      series: [
+        {
+          name: 'Access From',
+          type: 'pie',
+          radius: ['40%', '70%'],
+          avoidLabelOverlap: false,
+          label: {
+            show: false,
+            position: 'center'
+          },
+          emphasis: {
+            label: {
+              show: true,
+              fontSize: 40,
+              fontWeight: 'bold'
+            }
+          },
+          labelLine: {
+            show: false
+          },
+          data: [
+            { value: 84, name: 'SI' },
+            { value: 12, name: 'NO' },
+            { value: 4, name: 'NO SE' },
+          ]
+        }
+      ]
+    };
+};
+const getChartGiro = () =>{
+
+  return {
+      title: {
+          text: 'Giro',
+          left: 'center'
+      },
+      tooltip: {
+        trigger: 'item'
+      },
+      legend: {
+        top: '5%',
+        left: 'center'
+      },
+      series: [
+        {
+          name: 'Access From',
+          type: 'pie',
+          radius: ['40%', '70%'],
+          avoidLabelOverlap: false,
+          label: {
+            show: false,
+            position: 'center'
+          },
+          emphasis: {
+            label: {
+              show: true,
+              fontSize: 40,
+              fontWeight: 'bold'
+            }
+          },
+          labelLine: {
+            show: false
+          },
+          data: [
+            { value: 84, name: 'SI' },
+            { value: 12, name: 'NO' },
+            { value: 4, name: 'NO SE' },
+          ]
+        }
+      ]
+    };
+};
+
 
 const initCharts = () => {
     const chartReportes = echarts.init(document.getElementById("chartReportes"));
     const chartMantenimiento = echarts.init(document.getElementById("chartMantenimiento"));
     const chartArea = echarts.init(document.getElementById("chartArea"));
     const chartGarantia = echarts.init(document.getElementById("chartGarantia"));
+    const chartOcupacion = echarts.init(document.getElementById("chartOcupacion"));
+    const chartGiro = echarts.init(document.getElementById("chartGiro"));
 
     chartReportes.setOption(getChartReportes());
     chartMantenimiento.setOption(getChartMantenimiento());
     chartArea.setOption(getChartArea());
     chartGarantia.setOption(getChartGarantia());
+    chartOcupacion.setOption(getChartOcupacion());
+    chartGiro.setOption(getChartGiro());
 };
 window.addEventListener('load', () => {
     initCharts();

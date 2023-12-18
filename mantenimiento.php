@@ -73,6 +73,16 @@ require_once "./clases/Conexion.php";
                     <div id="chartGarantia" class="chart p-3"></div>
                 </div>
             </div>
+            <div class="col-6 p-3">
+                <div class="card shadow">
+                    <div id="chartOcupacion" class="chart p-3"></div>
+                </div>
+            </div>
+            <div class="col-6 p-3">
+                <div class="card shadow">
+                    <div id="chartGiro" class="chart p-3"></div>
+                </div>
+            </div>
         </div>
         <div class="row">
 
