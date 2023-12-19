@@ -841,6 +841,48 @@ public function obtenerPorcentajePorGiro() {
         throw new \Exception('Error al obtener porcentaje por giro: ' . $th->getMessage(), $th->getCode());
     }
 }
+public function obtenerTotalesDeudaPorConjunto() {
+    try {
+        $conexion = parent::conectar();
+        $coleccion = $conexion->naves;
+
+        $pipeline = [
+            [
+                '$match' => [
+                    'TOTAL_DEUDA' => ['$nin' => ['#XL_EVAL_ERROR#']],
+                    'CONJUNTO' => ['$ne' => null],
+                ],
+            ],
+            [
+                '$group' => [
+                    '_id' => '$CONJUNTO',
+                    'totalDeuda' => [
+                        '$sum' => [
+                            '$cond' => [
+                                'if' => ['$eq' => ['$TOTAL_DEUDA', 'null']],
+                                'then' => 0,
+                                'else' => ['$toDouble' => '$TOTAL_DEUDA'],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+            [
+                '$project' => [
+                    '_id' => 0,
+                    'conjunto' => '$_id',
+                    'totalDeuda' => 1,
+                ],
+            ],
+        ];
+
+        $datos = $coleccion->aggregate($pipeline)->toArray();
+        return $datos;
+
+    } catch (\Throwable $th) {
+        throw new \Exception('Error al obtener totales de deuda por conjunto: ' . $th->getMessage(), $th->getCode());
+    }
+}
 
         
 }

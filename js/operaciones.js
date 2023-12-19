@@ -321,7 +321,35 @@ const getChartGiro = (datos) => {
 };
 
 
-const initCharts = (entregasPorConjunto, vigencia, usos, cobranza, ocupacion, giro) => {
+
+
+const getChartDeudaActual = (data) => {
+  const conjuntos = data.map(item => item.conjunto);
+  const deudas = data.map(item => item.totalDeuda);
+
+  return {
+      title: {
+          text: 'Deuda Actual',
+          left: 'center'
+      },
+      xAxis: {
+          type: 'category',
+          data: conjuntos
+      },
+      yAxis: {
+          type: 'value'
+      },
+      series: [
+          {
+              data: deudas,
+              type: 'bar'
+          }
+      ]
+  };
+};
+
+const initCharts = (entregasPorConjunto, vigencia, usos, cobranza, ocupacion, giro, deuda) => {
+  const chartDeudaActual = echarts.init(document.getElementById("chartDeudaActual"));
   const chartEntregas = echarts.init(document.getElementById("chartEntregas"));
   const chartGarantias = echarts.init(document.getElementById("chartGarantias"));
   const chartEstCobranza = echarts.init(document.getElementById("chartEstCobranza"));
@@ -331,6 +359,9 @@ const initCharts = (entregasPorConjunto, vigencia, usos, cobranza, ocupacion, gi
   const chartOcupacion = echarts.init(document.getElementById("chartOcupacion"));
   const chartGiro = echarts.init(document.getElementById("chartGiro"));
 
+  
+  
+    chartDeudaActual.setOption(getChartDeudaActual(deuda));  // Cambiar a getChartEntregas
   chartEntregas.setOption(getChartEntregas(entregasPorConjunto));  // Cambiar a getChartEntregas
   chartGarantias.setOption(getChartGarantias(vigencia));
   chartEstCobranza.setOption(getChartEstCobranza(cobranza));
@@ -342,5 +373,5 @@ const initCharts = (entregasPorConjunto, vigencia, usos, cobranza, ocupacion, gi
 };
 
 window.addEventListener('load', () => {
-  initCharts(entregasPorConjunto, vigencia, usos, cobranza, ocupacion, giro);
+  initCharts(entregasPorConjunto, vigencia, usos, cobranza, ocupacion, giro, deuda);
 });

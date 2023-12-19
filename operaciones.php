@@ -10,6 +10,7 @@ require_once "./clases/Conexion.php";
   $cobranza = $crud->obtenerConteoPorConjuntoYEstadosCobranza();
   $ocupacion = $crud->obtenerPorcentajeOcupacion();
   $giro = $crud->obtenerPorcentajePorGiro();
+  $deuda = $crud->obtenerTotalesDeudaPorConjunto();
 ?> 
 
 <header class="header" id="header">
@@ -62,9 +63,18 @@ require_once "./clases/Conexion.php";
         <div class="row">
             <div class="col-6 p-3">
                 <div class="card shadow">
+                    <div id="chartDeudaActual" class="chart p-3"> </div>
+                </div>
+            </div>
+            <div class="col-6 p-3">
+                <div class="card shadow">
                     <div id="chartEntregas" class="chart p-3"> </div>
                 </div>
             </div>
+
+        </div>
+
+        <div class="row">
             <div class="col-6 p-3">
                 <div class="card shadow">
                     <div id="chartGarantias" class="chart p-3"> </div>
@@ -123,9 +133,10 @@ require_once "./clases/Conexion.php";
     const cobranza = <?php echo json_encode($cobranza); ?>;
     const ocupacion = <?php echo json_encode($ocupacion); ?>;
     const giro = <?php echo json_encode($giro); ?>;
+    const deuda = <?php echo json_encode($deuda); ?>;
     // Llamar a la función para inicializar el gráfico de entregas
     window.addEventListener('load', () => {
-        initCharts(entregasPorConjunto, vigencia, usos, cobranza, ocupacion, giro);
+        initCharts(entregasPorConjunto, vigencia, usos, cobranza, ocupacion, giro, deuda);
     });
 </script>
 <script src="js/operaciones.js"></script>
