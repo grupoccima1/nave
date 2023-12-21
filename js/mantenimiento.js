@@ -2,7 +2,7 @@ const getChartReportes = () => {
     return {
         title: {
           text: 'Reportes',
-          left: 'center'
+          left: 'right'
         },
         tooltip: {
           trigger: 'item'
@@ -40,7 +40,7 @@ const getChartMantenimiento = () => {
     return {
         title: {
           text: 'Tipo de Mantenimiento',
-          left: 'center'
+          left: 'right'
         },
         tooltip: {
           trigger: 'item'
@@ -72,12 +72,11 @@ const getChartMantenimiento = () => {
       };
 };
 
-
 const getChartArea = () =>{
     return {
         title: {
           text: 'Area de Mantenimiento',
-          left: 'center'
+          left: 'right'
         },
         tooltip: {
           trigger: 'item'
@@ -116,7 +115,7 @@ const getChartGarantia = () =>{
     return {
         title: {
             text: 'Garantia',
-            left: 'center'
+            left: 'right'
         },
         tooltip: {
           trigger: 'item'
@@ -163,15 +162,15 @@ const initCharts = () => {
     const chartMantenimiento = echarts.init(document.getElementById("chartMantenimiento"));
     const chartArea = echarts.init(document.getElementById("chartArea"));
     const chartGarantia = echarts.init(document.getElementById("chartGarantia"));
-    const chartOcupacion = echarts.init(document.getElementById("chartOcupacion"));
-    const chartGiro = echarts.init(document.getElementById("chartGiro"));
+    // const chartOcupacion = echarts.init(document.getElementById("chartOcupacion"));
+    // const chartGiro = echarts.init(document.getElementById("chartGiro"));
 
     chartReportes.setOption(getChartReportes());
     chartMantenimiento.setOption(getChartMantenimiento());
     chartArea.setOption(getChartArea());
     chartGarantia.setOption(getChartGarantia());
-    chartOcupacion.setOption(getChartOcupacion());
-    chartGiro.setOption(getChartGiro());
+    // chartOcupacion.setOption(getChartOcupacion());
+    // chartGiro.setOption(getChartGiro());
 };
 window.addEventListener('load', () => {
     initCharts();

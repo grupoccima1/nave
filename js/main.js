@@ -17,8 +17,14 @@ const getOptionChart1 = (datos) => {
   });
   console.log(source);
   return {
+    title: {
+      text: 'Cobranza',
+      left: 'right'
+  },
     legend: {},
-    tooltip: {},
+    tooltip: {
+      trigger: 'axis'
+    },
     dataset: {
       dimensions: ['product', 'Venta', 'Cobrado', 'Deuda Capital'],
       source: source
@@ -48,7 +54,7 @@ const getOptionChart2 = (datos) => {
       title: {
           text: '% de Morosidad',
           subtext: 'General',
-          left: 'center',
+          left: 'right',
       },
       tooltip: {
           trigger: 'item',
@@ -92,9 +98,15 @@ const getOptionChart3 = (datos) => {
   }));
 
   return {
+      title: {
+          text: 'Morosidad',
+          left: 'right'
+      },
       color: ['#405189', '#0ab39c', '#f06548', '#f7b84b', '#299cdb'],
       legend: {},
-      tooltip: {},
+      tooltip: {
+        trigger: 'axis',
+      },
       dataset: {
           dimensions: ['product', 'Al Corriente', 'Moroso'],
           source: seriesData,
@@ -126,7 +138,7 @@ const getOptionChart4 = (datos) => {
       color: ['#405189', '#0ab39c', '#f06548', '#f7b84b', '#299cdb', '#68A2B9', '#87A9E2', '#002856'],
       title: {
           text: 'Ventas Anuales',
-          left: 'center',
+          left: 'right',
       },
       tooltip: {
           trigger: 'item',
@@ -164,7 +176,8 @@ const getOptionChart5 = (data) => {
   return {
     color: ['#405189', '#0ab39c', '#f06548', '#f7b84b', '#299cdb'],
     title: {
-      text: 'Ventas Por Mes'
+      text: 'Ventas Por Mes',
+      left: 'right'
     },
     tooltip: {
       trigger: 'axis'
@@ -227,9 +240,15 @@ const getOptionChart6 = (data) => {
   });
 
   return {
+    title: {
+      text: 'Disponibilidad',
+      left: 'right'
+    },
     color: ['#405189', '#0ab39c', '#f06548', '#f7b84b', '#299cdb'],
     legend: {},
-    tooltip: {},
+    tooltip: {
+      trigger: 'axis',
+    },
     dataset: {
       dimensions: ['product', ...disponibilidades],
       source: datasetSource,

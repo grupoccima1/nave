@@ -21,7 +21,8 @@ const getChartEntregas = (datos) => {
   return {
       color: ['#405189', '#0ab39c', '#f06548', '#f7b84b', '#299cdb', '#68A2B9', '#87A9E2', '#002856'],
       title: {
-          text: 'Entregas'
+          text: 'Entregas',
+          left: 'right'
       },
       tooltip: {
           trigger: 'axis',
@@ -69,7 +70,8 @@ const getChartGarantias = (data) => {
   return {
       color: colorPalette,
       title: {
-          text: 'Garantias'
+          text: 'Garantias',
+          left: 'right'
       },
       tooltip: {
           trigger: 'axis',
@@ -117,7 +119,11 @@ const getChartEstCobranza = (datos) => {
   const seriesData = datos.map(item => item.estatusCobranza.reduce((acc, curr) => acc + curr.count, 0));
 
   return {
-      color: ['#405189', '#0ab39c', '#f06548', '#f7b84b', '#299cdb', '#68A2B9', '#87A9E2', '#002856'],
+    title: {
+      text: 'Estatus Cobranza',
+      left: 'right'
+      },  
+    color: ['#405189', '#0ab39c', '#f06548', '#f7b84b', '#299cdb', '#68A2B9', '#87A9E2', '#002856'],
       xAxis: {
           type: 'category',
           data: conjuntos,
@@ -129,6 +135,9 @@ const getChartEstCobranza = (datos) => {
                   return value;
               }
           }
+      },
+      tooltip: {
+        trigger: 'axis'
       },
       yAxis: {
           type: 'value'
@@ -148,9 +157,15 @@ const getChartEstCobranza = (datos) => {
 
 const getChartPEVentas = () => {
     return  {
+      title: {
+        text: 'Punto de Equilibrio Ventas ',
+        left: 'right'
+        },
       color: ['#405189', '#0ab39c', '#f06548', '#f7b84b', '#299cdb', '#68A2B9', '#87A9E2', '#002856'],
         legend: {},
-        tooltip: {},
+        tooltip: {
+          trigger:'axis'
+        },
         dataset: {
           source: [
             ['product', 'Ingresos', 'Egresos', 'Punto de Equilibrio'],
@@ -171,9 +186,15 @@ const getChartPEVentas = () => {
 
 const getChartPEIngresoR = () =>{
     return  {
-      color: ['#405189', '#0ab39c', '#f06548', '#f7b84b', '#299cdb', '#68A2B9', '#87A9E2', '#002856'],
+      title: {
+        text: 'Punto de Equilibrio',
+        left: 'right'
+        },
+        color: ['#405189', '#0ab39c', '#f06548', '#f7b84b', '#299cdb', '#68A2B9', '#87A9E2', '#002856'],
         legend: {},
-        tooltip: {},
+        tooltip: {
+          trigger: 'axis'
+        },
         dataset: {
           source: [
             ['product', 'Ingresos', 'Egresos', 'Punto de Equilibrio'],
@@ -322,7 +343,13 @@ const getChartDeudaActual = () =>{
     return {
         title: {
             text: 'Deuda Actual',
-            left: 'center'
+            left: 'right'
+        },
+        tooltip: {
+          trigger: 'axis',
+          axisPointer: {
+            type: 'shadow'
+          }
         },
         xAxis: {
             type: 'category',
