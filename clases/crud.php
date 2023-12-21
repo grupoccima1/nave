@@ -746,6 +746,144 @@ public function obtenerConteoPorConjuntoYEstadosCobranza() {
         throw new \Exception('Error al obtener conteo por conjunto y estados de cobranza: ' . $th->getMessage(), $th->getCode());
     }
 }
+public function obtenerPorcentajeOcupacion() {
+    try {
+        $conexion = parent::conectar();
+        $coleccion = $conexion->naves;
+
+        $pipeline = [
+            [
+                '$group' => [
+                    '_id' => '$OCUPACION',
+                    'count' => ['$sum' => 1],
+                ],
+            ],
+            [
+                '$group' => [
+                    '_id' => null,
+                    'ocupaciones' => ['$push' => ['ocupacion' => '$_id', 'count' => '$count']],
+                    'total' => ['$sum' => '$count'],
+                ],
+            ],
+            [
+                '$unwind' => '$ocupaciones',
+            ],
+            [
+                '$project' => [
+                    '_id' => 0,
+                    'ocupacion' => '$ocupaciones.ocupacion',
+                    'porcentaje' => [
+                        '$multiply' => [
+                            ['$divide' => ['$ocupaciones.count', '$total']],
+                            100,
+                        ],
+                    ],
+                ],
+            ],
+        ];
+
+        $datos = $coleccion->aggregate($pipeline)->toArray();
+
+        echo "<script>console.table(" . json_encode($datos) . ")</script>";
+        return $datos;
+
+    } catch (\Throwable $th) {
+        throw new \Exception('Error al obtener porcentaje de ocupación: ' . $th->getMessage(), $th->getCode());
+    }
+}
+public function obtenerPorcentajePorGiro() {
+    try {
+        $conexion = parent::conectar();
+        $coleccion = $conexion->naves;
+
+        $pipeline = [
+            [
+                '$group' => [
+                    '_id' => '$GIRO',
+                    'count' => ['$sum' => 1],
+                ],
+            ],
+            [
+                '$group' => [
+                    '_id' => null,
+                    'giros' => [
+                        '$push' => [
+                            'giro' => '$_id',
+                            'count' => '$count',
+                        ],
+                    ],
+                    'total' => ['$sum' => '$count'],
+                ],
+            ],
+            [
+                '$unwind' => '$giros',
+            ],
+            [
+                '$project' => [
+                    '_id' => 0,
+                    'giro' => '$giros.giro',
+                    'porcentaje' => [
+                        '$multiply' => [
+                            [
+                                '$divide' => ['$giros.count', '$total'],
+                            ],
+                            100,
+                        ],
+                    ],
+                ],
+            ],
+        ];
+
+        $datos = $coleccion->aggregate($pipeline)->toArray();
+        return $datos;
+
+    } catch (\Throwable $th) {
+        throw new \Exception('Error al obtener porcentaje por giro: ' . $th->getMessage(), $th->getCode());
+    }
+}
+public function obtenerTotalesDeudaPorConjunto() {
+    try {
+        $conexion = parent::conectar();
+        $coleccion = $conexion->naves;
+
+        $pipeline = [
+            [
+                '$match' => [
+                    'TOTAL_DEUDA' => ['$nin' => ['#XL_EVAL_ERROR#']],
+                    'CONJUNTO' => ['$ne' => null],
+                ],
+            ],
+            [
+                '$group' => [
+                    '_id' => '$CONJUNTO',
+                    'totalDeuda' => [
+                        '$sum' => [
+                            '$cond' => [
+                                'if' => ['$eq' => ['$TOTAL_DEUDA', 'null']],
+                                'then' => 0,
+                                'else' => ['$toDouble' => '$TOTAL_DEUDA'],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+            [
+                '$project' => [
+                    '_id' => 0,
+                    'conjunto' => '$_id',
+                    'totalDeuda' => 1,
+                ],
+            ],
+        ];
+
+        $datos = $coleccion->aggregate($pipeline)->toArray();
+        return $datos;
+
+    } catch (\Throwable $th) {
+        throw new \Exception('Error al obtener totales de deuda por conjunto: ' . $th->getMessage(), $th->getCode());
+    }
+}
+
         
 }
 
