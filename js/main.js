@@ -82,12 +82,6 @@ const getOptionChart2 = (datos) => {
   };
 };
 
-
-
-
-
-
-
 const getOptionChart3 = (datos) => {
   const xAxisData = datos.map((item) => item._id);
 
@@ -120,8 +114,6 @@ const getOptionChart3 = (datos) => {
       series: [{ type: 'bar', color: '#4A5489' }, { type: 'bar', color: '#2FBEAB' }],
   };
 };
-
-
 
 
 const getOptionChart4 = (datos) => {
@@ -165,9 +157,6 @@ const getOptionChart4 = (datos) => {
       ],
   };
 };
-
-
-
 
 const getOptionChart5 = (data) => {
   const years = Array.from(new Set(data.map(item => item.year)));
@@ -223,9 +212,6 @@ const getOptionChart5 = (data) => {
   };
 };
 
-
-
-
 const getOptionChart6 = (data) => {
   const conjuntos = [...new Set(data.map(item => item.conjunto))];
   const disponibilidades = [...new Set(data.map(item => item.disponibilidad))];
@@ -263,7 +249,6 @@ const getOptionChart6 = (data) => {
     series: disponibilidades.map(disponibilidad => ({ type: 'bar' })),
   };
 };
-
 
 const initCharts = (datosNaves,datosN, datosE, datosR, datosT, datosU) => {
   const chart1 = echarts.init(document.getElementById("chart1"));
