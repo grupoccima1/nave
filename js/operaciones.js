@@ -118,6 +118,9 @@ const getChartEstCobranza = (datos) => {
 
   return {
       color: ['#405189', '#0ab39c', '#f06548', '#f7b84b', '#299cdb', '#68A2B9', '#87A9E2', '#002856'],
+      title: {
+        text: 'Estatus cobranza'
+    },
       xAxis: {
           type: 'category',
           data: conjuntos,
@@ -149,6 +152,9 @@ const getChartEstCobranza = (datos) => {
 const getChartPEVentas = () => {
     return  {
       color: ['#405189', '#0ab39c', '#f06548', '#f7b84b', '#299cdb', '#68A2B9', '#87A9E2', '#002856'],
+      title: {
+        text: 'Punto de equilibrio'
+    },
         legend: {},
         tooltip: {},
         dataset: {
@@ -172,6 +178,9 @@ const getChartPEVentas = () => {
 const getChartPEIngresoR = () =>{
     return  {
       color: ['#405189', '#0ab39c', '#f06548', '#f7b84b', '#299cdb', '#68A2B9', '#87A9E2', '#002856'],
+      title: {
+        text: 'P.E. VS INGRESOS'
+    },
         legend: {},
         tooltip: {},
         dataset: {
