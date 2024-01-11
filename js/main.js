@@ -172,7 +172,9 @@ const getOptionChart5 = (data) => {
       trigger: 'axis'
     },
     legend: {
-      data: years.map(year => year.toString())
+      data: years.map(year => year.toString()), 
+      orient: 'vertical',
+      left:'right'
     },
     grid: {
       left: '3%',
