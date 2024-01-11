@@ -166,7 +166,7 @@ const getOptionChart5 = (data) => {
     color: ['#405189', '#0ab39c', '#f06548', '#f7b84b', '#299cdb'],
     title: {
       text: 'Ventas Por Mes',
-      left: 'right'
+      left: 'left'
     },
     tooltip: {
       trigger: 'axis'
