@@ -181,7 +181,10 @@ const getChartPEIngresoR = () =>{
       title: {
         text: 'P.E. VS INGRESOS'
     },
-        legend: {},
+        legend: {
+          orient: 'vertical',
+          left: 'left',
+        },
         tooltip: {},
         dataset: {
           source: [
@@ -300,8 +303,8 @@ const getChartGiro = (datos) => {
       trigger: 'item'
     },
     legend: {
-      top: '5%',
-      left: 'center'
+      orient: 'vertical',
+      left: 'left',
     },
     series: [
       {
