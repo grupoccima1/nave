@@ -183,7 +183,7 @@ const getChartPEIngresoR = () =>{
     },
         legend: {
           orient: 'vertical',
-          left: 'left',
+          left: 'right',
         },
         tooltip: {},
         dataset: {
