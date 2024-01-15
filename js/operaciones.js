@@ -4,17 +4,12 @@ const getChartEntregas = (datos) => {
       return {};
   }
 
-  // Extraer conjuntos únicos de los datos
-  const conjuntos = [...new Set(datos.map(item => item._id))];
-
-  const source = conjuntos.map(conjunto => {
-      const conjuntoData = datos.find(item => item._id === conjunto);
-      return {
-          conjunto: conjunto.toString(),
-          'Pendiente': conjuntoData ? conjuntoData.pendiente || 0 : 0,
-          'Entregado': conjuntoData ? conjuntoData.entregado || 0 : 0
-      };
-  });
+  // Adaptar la estructura de datos según el formato que devuelve la función PHP
+  const source = datos.map(item => ({
+      conjunto: item.CONJUNTO.toString(),
+      'Pendiente': item.pendiente || 0,
+      'Entregado': item.entregado || 0
+  }));
 
   console.log(source);
 
@@ -42,7 +37,7 @@ const getChartEntregas = (datos) => {
       },
       yAxis: {
           type: 'category',
-          data: conjuntos.map(conjunto => conjunto.toString())
+          data: source.map(conjunto => conjunto.conjunto)
       },
       series: [
           {
@@ -60,16 +55,21 @@ const getChartEntregas = (datos) => {
 };
 
 const getChartGarantias = (data) => {
+  if (!data || !Array.isArray(data)) {
+      console.error('Error: data no está definido o no es un array');
+      return {};
+  }
+
   const colorPalette = ['#405189', '#0ab39c', '#f06548', '#f7b84b', '#299cdb', '#68A2B9', '#87A9E2', '#002856'];
 
-  const xAxisData = data.map(item => item.conjunto);
+  const xAxisData = data.map(item => item.CONJUNTO);
   const seriesDataVigente = data.map(item => item.totalVigente);
   const seriesDataVencido = data.map(item => item.totalVencido);
 
   return {
       color: colorPalette,
       title: {
-          text: 'Garantias'
+          text: 'Garantías'
       },
       tooltip: {
           trigger: 'axis',
@@ -106,21 +106,37 @@ const getChartGarantias = (data) => {
       ]
   };
 };
-
-
-
-
-
-
 const getChartEstCobranza = (datos) => {
-  const conjuntos = datos.map(item => item.conjunto);
-  const seriesData = datos.map(item => item.estatusCobranza.reduce((acc, curr) => acc + curr.count, 0));
+  if (!datos || !Array.isArray(datos)) {
+      console.error('Error: datos no está definido o no es un array');
+      return {};
+  }
+
+  const conjuntos = [...new Set(datos.map(item => item.conjunto))];
+  const seriesData = [];
+
+  conjuntos.forEach(conjunto => {
+      const conjuntoData = { conjunto, estatusCobranza: {}, count: 0 };
+      seriesData.push(conjuntoData);
+  });
+
+  datos.forEach(item => {
+      const conjuntoIndex = conjuntos.indexOf(item.conjunto);
+      if (conjuntoIndex !== -1) {
+          const estatusCobranza = item.estatus_cobranza || 'N/A';
+          seriesData[conjuntoIndex].estatusCobranza[estatusCobranza] = parseInt(item.count);
+          seriesData[conjuntoIndex].count += parseInt(item.count);
+      }
+  });
 
   return {
       color: ['#405189', '#0ab39c', '#f06548', '#f7b84b', '#299cdb', '#68A2B9', '#87A9E2', '#002856'],
       title: {
-        text: 'Estatus cobranza'
-    },
+          text: 'Estatus cobranza'
+      },
+      legend: {
+          data: Object.keys(seriesData[0].estatusCobranza)
+      },
       xAxis: {
           type: 'category',
           data: conjuntos,
@@ -136,18 +152,29 @@ const getChartEstCobranza = (datos) => {
       yAxis: {
           type: 'value'
       },
-      series: [
-          {
-              data: seriesData,
-              type: 'bar',
-              showBackground: true,
-              backgroundStyle: {
-                  color: 'rgba(180, 180, 180, 0.2)'
-              }
+      tooltip: {
+          trigger: 'axis',
+          axisPointer: {
+              type: 'shadow'
+          },
+          formatter: function (params) {
+              const conjunto = params[0].axisValue;
+              let content = `<strong>${conjunto}</strong><br/>`;
+              params.forEach(param => {
+                  content += `${param.marker} ${param.seriesName}: ${param.value}<br/>`;
+              });
+              return content;
           }
-      ]
+      },
+      series: Object.keys(seriesData[0].estatusCobranza).map(estatus => ({
+          name: estatus,
+          type: 'bar',
+          data: conjuntos.map(conjunto => seriesData.find(item => item.conjunto === conjunto).estatusCobranza[estatus] || 0),
+      }))
   };
 };
+
+
 
 const getChartPEVentas = () => {
     return  {
@@ -202,11 +229,17 @@ const getChartPEIngresoR = () =>{
 };
 
 const getChartTipoUso = (datos) => {
+  if (!datos || !Array.isArray(datos)) {
+      console.error('Error: datos no está definido o no es un array');
+      return {};
+  }
+
   const colores = ['#405189', '#0ab39c', '#f06548', '#f7b84b', '#299cdb', '#68A2B9', '#87A9E2', '#002856'];
 
- 
-  const etiquetas = datos.map((dato) => dato.USO);
-  const porcentajes = datos.map((dato) => dato.porcentaje);
+  // Convertir los porcentajes a números y redondear a dos decimales
+  datos.forEach(dato => {
+      dato.porcentaje = parseFloat(dato.porcentaje).toFixed(2);
+  });
 
   return {
       color: colores,
@@ -217,6 +250,7 @@ const getChartTipoUso = (datos) => {
       },
       tooltip: {
           trigger: 'item',
+          formatter: '{b}: {c}%'
       },
       legend: {
           orient: 'vertical',
@@ -224,7 +258,7 @@ const getChartTipoUso = (datos) => {
       },
       series: [
           {
-              name: 'Access From',
+              name: 'Tipo de Uso',
               type: 'pie',
               radius: '50%',
               data: datos.map((dato) => ({
@@ -243,100 +277,114 @@ const getChartTipoUso = (datos) => {
   };
 };
 
+
+
 const getChartOcupacion = (data) => {
   const colorPalette = ['#405189', '#0ab39c', '#f06548', '#f7b84b', '#299cdb', '#68A2B9', '#87A9E2', '#002856'];
 
   const seriesData = data.map(item => ({
-    value: item.porcentaje,
-    name: item.ocupacion
+      value: item.porcentaje,
+      name: item.ocupacion
   }));
 
   return {
-    title: {
-      text: 'Ocupacion',
-      left: 'center'
-    },
-    tooltip: {
-      trigger: 'item'
-    },
-    legend: {
-      top: '5%',
-      left: 'center',
-      data: data.map(item => item.ocupacion),
-    },
-    series: [
-      {
-        name: 'Ocupacion',
-        type: 'pie',
-        radius: ['40%', '70%'],
-        avoidLabelOverlap: false,
-        label: {
-          show: false,
-          position: 'center'
-        },
-        emphasis: {
-          label: {
-            show: true,
-            fontSize: 14,
-            fontWeight: 'bold'
+      title: {
+          text: 'Ocupación',
+          left: 'center'
+      },
+      tooltip: {
+          trigger: 'item',
+          formatter: '{a} <br/>{b}: {c}%'
+      },
+      legend: {
+          top: '5%',
+          left: 'center',
+          data: data.map(item => item.ocupacion),
+      },
+      series: [
+          {
+              name: 'Ocupación',
+              type: 'pie',
+              radius: '50%',
+              center: ['50%', '50%'],
+              avoidLabelOverlap: false,
+              label: {
+                  show: true,
+                  position: 'outside',
+                  formatter: '{b}: {d}%'
+              },
+              emphasis: {
+                  label: {
+                      show: true,
+                      fontSize: 14,
+                      fontWeight: 'bold'
+                  }
+              },
+              labelLine: {
+                  show: true,
+                  length: 10,
+                  length2: 5
+              },
+              data: seriesData,
+              color: colorPalette,
           }
-        },
-        labelLine: {
-          show: false
-        },
-        data: seriesData,
-        color: colorPalette,
-      }
-    ]
+      ]
   };
 };
 
 const getChartGiro = (datos) => {
-  const seriesData = datos.map(item => ({ value: item.porcentaje, name: item.giro }));
+  const seriesData = datos.map(item => ({ value: item.porcentaje, name: item.GIRO }));
 
   return {
-    title: {
-      text: 'Giro',
-      left: 'center'
-    },
-    tooltip: {
-      trigger: 'item'
-    },
-    legend: {
-      orient: 'vertical',
-      left: 'left',
-    },
-    series: [
-      {
-        name: 'Access From',
-        type: 'pie',
-        radius: ['40%', '70%'],
-        avoidLabelOverlap: false,
-        label: {
-          show: false,
-          position: 'center'
-        },
-        emphasis: {
-          label: {
-            show: true,
-            fontSize: 12,
-            fontWeight: 'bold'
+      title: {
+          text: 'Giro',
+          left: 'center'
+      },
+      tooltip: {
+          trigger: 'item',
+          formatter: '{a} <br/>{b}: {c}%'
+      },
+      legend: {
+          orient: 'vertical',
+          left: 'left',
+          data: datos.map(item => item.GIRO),
+      },
+      series: [
+          {
+              name: 'Giro',
+              type: 'pie',
+              radius: '50%',
+              center: ['50%', '50%'],
+              avoidLabelOverlap: false,
+              label: {
+                  show: true,
+                  position: 'outside',
+                  formatter: '{b}: {d}%'
+              },
+              emphasis: {
+                  label: {
+                      show: true,
+                      fontSize: 12,
+                      fontWeight: 'bold'
+                  }
+              },
+              labelLine: {
+                  show: true,
+                  length: 10,
+                  length2: 5
+              },
+              data: seriesData
           }
-        },
-        labelLine: {
-          show: false
-        },
-        data: seriesData
-      }
-    ]
+      ]
   };
 };
+
 
 
 
 
 const getChartDeudaActual = (data) => {
-  const conjuntos = data.map(item => item.conjunto);
+  const conjuntos = data.map(item => item.CONJUNTO);
   const deudas = data.map(item => item.totalDeuda);
 
   return {
@@ -346,44 +394,69 @@ const getChartDeudaActual = (data) => {
       },
       xAxis: {
           type: 'category',
-          data: conjuntos
+          data: conjuntos,
+          axisLabel: {
+              interval: 0,
+              rotate: 45,
+              margin: 10,
+              formatter: function (value) {
+                  return value;
+              }
+          }
       },
       yAxis: {
           type: 'value'
       },
+      tooltip: {
+          trigger: 'axis',
+          axisPointer: {
+              type: 'shadow'
+          },
+          formatter: '{b}: {c}'
+      },
       series: [
           {
               data: deudas,
-              type: 'bar'
+              type: 'bar',
+              showBackground: true,
+              backgroundStyle: {
+                  color: 'rgba(180, 180, 180, 0.2)'
+              }
           }
       ]
   };
 };
 
+
 const initCharts = (entregasPorConjunto, vigencia, usos, cobranza, ocupacion, giro, deuda) => {
   const chartDeudaActual = echarts.init(document.getElementById("chartDeudaActual"));
   const chartEntregas = echarts.init(document.getElementById("chartEntregas"));
-  const chartGarantias = echarts.init(document.getElementById("chartGarantias"));
-  const chartEstCobranza = echarts.init(document.getElementById("chartEstCobranza"));
-  const chartPEVentas = echarts.init(document.getElementById("chartPEVentas"));
-  const chartPEIngresoR = echarts.init(document.getElementById("chartPEIngresoR"));
-  const chartTipoUso = echarts.init(document.getElementById("chartTipoUso"));
-  const chartOcupacion = echarts.init(document.getElementById("chartOcupacion"));
-  const chartGiro = echarts.init(document.getElementById("chartGiro"));
+   const chartGarantias = echarts.init(document.getElementById("chartGarantias"));
+   const chartEstCobranza = echarts.init(document.getElementById("chartEstCobranza"));
+   const chartPEVentas = echarts.init(document.getElementById("chartPEVentas"));
+   const chartPEIngresoR = echarts.init(document.getElementById("chartPEIngresoR"));
+   const chartTipoUso = echarts.init(document.getElementById("chartTipoUso"));
+   const chartOcupacion = echarts.init(document.getElementById("chartOcupacion"));
+   const chartGiro = echarts.init(document.getElementById("chartGiro"));
 
-  
-  
-    chartDeudaActual.setOption(getChartDeudaActual(deuda));  // Cambiar a getChartEntregas
-  chartEntregas.setOption(getChartEntregas(entregasPorConjunto));  // Cambiar a getChartEntregas
+ chartDeudaActual.setOption(getChartDeudaActual(deuda));
+  chartEntregas.setOption(getChartEntregas(entregasPorConjunto));  // Cambiado a getChartEntregas
   chartGarantias.setOption(getChartGarantias(vigencia));
-  chartEstCobranza.setOption(getChartEstCobranza(cobranza));
-  chartPEVentas.setOption(getChartPEVentas());
-  chartPEIngresoR.setOption(getChartPEIngresoR());
+   chartEstCobranza.setOption(getChartEstCobranza(cobranza));
+   chartPEVentas.setOption(getChartPEVentas());
+   chartPEIngresoR.setOption(getChartPEIngresoR());
   chartTipoUso.setOption(getChartTipoUso(usos));
-  chartOcupacion.setOption(getChartOcupacion(ocupacion));
-  chartGiro.setOption(getChartGiro(giro));
+   chartOcupacion.setOption(getChartOcupacion(ocupacion));
+   chartGiro.setOption(getChartGiro(giro));
 };
 
 window.addEventListener('load', () => {
-  initCharts(entregasPorConjunto, vigencia, usos, cobranza, ocupacion, giro, deuda);
+  fetch('http://localhost/nave/clases/crud.php')
+    .then(response => response.json())
+    .then(data => {
+      console.log(data.entregasPorConjunto); // Imprime los datos en la consola
+      initCharts(data.entregasPorConjunto, data.vigencia, data.usos, data.cobranza, data.ocupacion, data.giro, data.deuda);
+    })
+    .catch(error => console.error('Error al obtener datos de MySQL:', error));
 });
+

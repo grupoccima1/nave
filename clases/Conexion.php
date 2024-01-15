@@ -1,30 +1,26 @@
-<?php 
+<?php
+        session_start();
 
-    require_once  $_SERVER['DOCUMENT_ROOT'] . "/nave/vendor/autoload.php";
-    
-        class Conexion {
-        public function conectar(){
+        class Conexion{
+            protected $dbh;
 
-            try {
-                $servidor = "127.0.0.1";
-                $usuario ="mongoadmin";
-                $password = "123456";
-                $baseDatos = "naves";
-                $puerto = "27017";
-    
-                $cadenaConexion = "mongodb://" . 
-                                    $usuario . ":" . 
-                                    $password . "@" . 
-                                    $servidor . ":" . 
-                                    $puerto . "/" . 
-                                    $baseDatos;
-                $cliente = new MongoDB\Client($cadenaConexion);
-                return $cliente->selectDatabase($baseDatos);
-            } catch (\Throwable $th) {
-                return $th->getMessage();
+            protected function conectar(){
+                try{
+                    $conectar=mysqli_connect('localhost','root','','naves');
+                   // $conectar = $this->dbh = new PDO("mysql:local=localhost;dbname=bbbme11_ti1", "bbbme11_ti","Gccima22.");
+                    return $conectar;
+                } catch (Exception $e) {
+                    print "¡Error BD!: " .$e->getMessage()."<br/>";
+                    die();
+                }
             }
 
-        }
-    }
+            public function set_names(){
+                return $this->dbh->query("SET NAMES 'utf8'");
+            }
 
+            public function ruta(){
+               // return "https://ti.grupoccima.com/index.php";
+            }
+        }
 ?>

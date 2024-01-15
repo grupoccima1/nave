@@ -3,13 +3,13 @@
 require_once "./clases/Conexion.php";
   require_once "./clases/crud.php";
   $crud = new Crud();
-  $datos = $crud->mostrarDatos();
+ // $datos = $crud->mostrarDatos();
   $datosNaves = $crud->consultarDatosNaves();
   $datosN = $crud->consultarPorcentajeEstados();
   $datosE = $crud->obtenerDatosPorConjuntoYEstado();
   $datosR = $crud->calcularPorcentajeVentaPorAnio();
-  $datosT = $crud->calcularTotalVentaPorAnioYMes();
-  $datosU = $crud->obtenerConteoPorConjuntoYDisponibilidad();
+ $datosT = $crud->calcularTotalVentaPorAnioYMes();
+ $datosU = $crud->obtenerConteoPorConjuntoYDisponibilidad();
 ?> 
 
 

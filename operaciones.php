@@ -3,14 +3,14 @@
 require_once "./clases/Conexion.php";
   require_once "./clases/crud.php";
   $crud = new Crud();
-  $datos = $crud->mostrarDatos();
+//   $datos = $crud->mostrarDatos();
   $entregasPorConjunto = $crud->consultarEntregasPorConjunto(); 
   $vigencia = $crud->contarEstadosGarantiaPorConjunto(); 
   $usos = $crud->obtenerPorcentajePorUso();
-  $cobranza = $crud->obtenerConteoPorConjuntoYEstadosCobranza();
-  $ocupacion = $crud->obtenerPorcentajeOcupacion();
-  $giro = $crud->obtenerPorcentajePorGiro();
-  $deuda = $crud->obtenerTotalesDeudaPorConjunto();
+ $cobranza = $crud->obtenerConteoPorConjuntoYEstadosCobranza();
+ $ocupacion = $crud->obtenerPorcentajeOcupacion();
+   $giro = $crud->obtenerPorcentajePorGiro();
+   $deuda = $crud->obtenerTotalesDeudaPorConjunto();
 ?> 
 
 <header class="header" id="header">
