@@ -124,7 +124,7 @@ const getOptionChart3 = (datos) => {
           axisLabel: { interval: 0, rotate: 45, fontSize: 10 }, 
       },
       yAxis: {},
-      series: [{ type: 'bar', color: '#4A5489' }, { type: 'bar', color: '#2FBEAB' }],
+      series: [ { type: 'bar', color: '#2FBEAB' }, { type: 'bar', color: '#4A5489' }],
   };
 };
 
@@ -158,6 +158,7 @@ const getOptionChart4 = (datos) => {
               name: 'Ventas Anuales',
               type: 'pie',
               radius: '50%',
+              center: ['60%', '50%'],
               data: pieData,
               emphasis: {
                   itemStyle: {

@@ -54,7 +54,7 @@ require_once "./clases/Conexion.php";
     </nav>
 </div>
 <main>
-    <div class="container">
+    <div class="container-fluid">
         <div class="row gap-2">
             <div class="col-12 mt-3 mb-3">
                 <h1 class="text-blue-900">Dashboard</h1>
